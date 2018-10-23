@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <p class="bid_right_block_title">DEAL INFO</p>    
+    </div>    
+  </div>
+  <div class="row">
+    <div class="col-4 contact_borrower_name">
+      <%=image_tag("default_pic.png") %>
+      <p><span>Borrower</span><br/><%=@borrower_request.user.name%></p>
+    </div>    
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <p  class="borrowers_block_title">Location</p>
+      <p><%=@borrower_request.property_address %></p>
+    </div>
+    <div class="col-4">
+      <p  class="borrowers_block_title">Occupation</p>
+      <p>Some long name of the occupation name </p>
+    </div>
+    <div class="col-4">
+      <p  class="borrowers_block_title">Mortgage Amount</p>
+      <p>$1,80,000</p>
+    </div>        
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <p  class="borrowers_block_title">Credit Score</p>
+      <p><%=@borrower_request.credit_score %>(<%= score_value(@borrower_request.credit_score) %>)</p>
+    </div>
+    <div class="col-4">
+      <p  class="borrowers_block_title">Rate</p>
+      <p><%=@bid.rate %>%</p>
+    </div>        
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <p  class="borrowers_block_title">Purpose</p>
+      <p>Sample Purpose</p>
+    </div>
+    <div class="col-4">
+      <p  class="borrowers_block_title">Broker Fee</p>
+      <p><%= @bid.broker_fee %>%</p>
+    </div>
+    <div class="col-4">
+      <p  class="borrowers_block_title">Term</p>
+      <p><%= @bid.term %></p>
+    </div>        
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <p  class="borrowers_block_title">Security</p>
+      <p><%=@borrower_request.mortagage_level %></p>
+    </div>
+    <div class="col-4">
+      <p  class="borrowers_block_title">Lender Fee</p>
+      <p><%= @bid.lender_fee %>%</p>
+    </div>
+    <div class="col-4">
+      <p  class="borrowers_block_title">mb.com admin fee</p>
+      <p>0.5%</p>
+    </div>        
+  </div>      
+  <div class="row">
+    <div class="col-12">
+      <p  class="borrowers_block_title">Information about the mortgage and the borrower</p>
+      <p><%= @borrower_request.description %></p>        
+      <p><%= @bid.comments %></p>                
+    </div>
+  </div>
+</div>
+

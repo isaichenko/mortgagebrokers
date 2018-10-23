@@ -1,0 +1,12 @@
+<div class="container">
+  <h2 >Profile</h2>  
+  <hr/>
+  <div class="clearfix">&nbsp;</div>
+</div>
+<% if current_user.role.name == BROKER %>
+  <%= render partial: 'broker_profile' %>
+<% else %>
+  <%= render partial: 'borrower_profile' %>
+<% end %>
+<div class="clearfix">&nbsp;</div>
+<div class="clearfix">&nbsp;</div>

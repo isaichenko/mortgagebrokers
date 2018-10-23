@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MortgageBrokers.com - Borrower Request Cancelled</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+</head>
+<body style="padding: 0; margin: 0; background-color: #eceff0;">
+<div style="">
+  <div style="width: 600px; max-width: 100%; margin: 0px auto; overflow: hidden; ">
+
+    <%= render :partial => "layouts/mailers/email_header"%>
+
+    <div style="background-color: #ffffff; padding: 20px; color:#052540;">
+      <p style="margin-top: 30px!important; font-size: 15px; font-family: 'Roboto', sans-serif; color:#052540;"> Dear <%= @user.name %>, </p>
+      <p style="font-family: 'Roboto', sans-serif; font-size: 15px; color:#052540;">
+        <b><h3>Your invited has been cancelled for bidding a borrower request </h3></b>
+      </p>
+
+      <p style="font-family: 'Roboto', sans-serif; font-size: 15px; color:#052540;">Please click here to know details</p>
+      <%= link_to "Click Here", '#', {:style=>"color: grey !important; font-family: 'Roboto', sans-serif; font-size: 14px;"} %>
+      <p style="font-family: 'Roboto', sans-serif; font-size: 15px; color:#052540;">
+        Thank you.
+      </p>
+      <p style="font-family: 'Roboto', sans-serif; font-size: 15px; color:#052540;">
+        Sincerely,<br>MortgageBrokers.com.
+      </p>
+    </div>
+
+    <%= render :partial => "layouts/mailers/email_footer"%>
+
+  </div>
+</div>
+</body>
+</html>

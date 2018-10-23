@@ -1,0 +1,7 @@
+<div class="row">
+  <% REQ_STATUS.merge(all:"all").each do |key, val|%>
+    <div class="col-2 borrower_filter <%= is_active_filter(REQ_STATUS[key]) %>">
+      <%= link_to "#{cap_status(key)}(#{@request_counts[val.to_sym]})",{action: 'index',filter: REQ_STATUS[key]} %>
+    </div>  
+  <% end %>    
+</div>

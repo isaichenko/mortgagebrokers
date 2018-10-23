@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <%= link_to 'View Proposals', '#' , class: 'btn btn-warning btn-arrow-right'%>
+    </div>    
+  </div>
+</div><!-- Container End -->  
+<br/>
+<div class="container">
+  <div class="row">
+    <div class="col-3 prosposal_time_block_1">
+      <p>TIME LEFT</p>
+      <%= get_bidding_hours(@borrower_request.bidding_end_time) if @borrower_request.bidding_end_time%>
+      <p></p>
+    </div>
+    <div class="col-3 prosposal_time_block_2">
+      <p>BEST RATE SO FAR</p>
+      <p><%= @borrower_request.bids.pluck(:rate).min.to_s + " %" if @borrower_request.bids.any? %></p>
+    </div>
+    <div class="col-3 prosposal_time_block_3">
+      <p># OF BIDS</p>
+      <p><%= @borrower_request.bids.length %></p>
+    </div>                
+  </div>
+</div>
+
+<div class="container prosposal_info_view">
+  <div class="row">
+    <div class="col-12">
+      <p>Good To Know</p>
+    </div>            
+  </div>
+  <div class="row">
+    <div class="col-9">
+      <p>Once you start a deal with broker , your personal information such as fullname , your address and telephone number will be disclosed.</p>
+    </div>            
+  </div>  
+</div>
+<div class="container"> 
+<%= render partial: 'bids' %>
+</div>

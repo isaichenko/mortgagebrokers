@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="col-xs-12" style="float:right;color:#18B074;"> COINS: <%= @coins %> </div>
+</div>
+<div class="container">
+  <h1 class="text-center">My Deals</h1>  
+</div>
+<div class="clearfix">&nbsp;</div>
+<div class="container">
+  <%= render partial: 'filters_block' %>
+  <% if !@my_deals.blank? %>
+  <%= render partial: 'my_deals_block'%>
+  <% else %>
+  <div class="clearfix">&nbsp;</div>
+  <div class="col-12">
+    <h5 class="text-center">No <%= params[:filter].gsub('Sent','Pending') if params[:filter] %> Deals Found</h5>
+  </div>
+  <div class="clearfix">&nbsp;</div>
+  <% end %>
+
+</div>
+<div class="clearfix">&nbsp;</div>

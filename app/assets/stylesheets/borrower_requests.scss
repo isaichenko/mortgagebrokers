@@ -1,0 +1,325 @@
+// Place all the styles related to the BorrowerRequests controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.request_box {
+  width: 100%;
+  height: 100px;
+  border-style: dashed;
+  border-width: 2px;
+  padding: 25px;
+  text-align:center;
+}
+.radioBtn .notActive{
+  color: #3276b1;
+  background-color: #fff;
+}
+.credit_score{
+  width:100%;
+}
+.StripeElement {
+  background-color: white;
+  height: 40px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+.btn-arrow-right,
+.btn-arrow-left {
+   position: relative;
+   padding-left: 18px;
+   padding-right: 18px;
+}
+
+.btn-arrow-right {
+   padding-left: 70%;
+}
+
+.btn-arrow-left {
+   padding-right: 36px;
+}
+
+.btn-arrow-right:before,
+.btn-arrow-right:after,
+.btn-arrow-left:before,
+.btn-arrow-left:after {
+   /* make two squares (before and after), looking similar to the button */
+   
+   content: "";
+   position: absolute;
+   top: 5px;
+   /* move it down because of rounded corners */
+   
+   width: 22px;
+   /* same as height */
+   
+   height: 22px;
+   /* button_outer_height / sqrt(2) */
+   
+   background: inherit;
+   /* use parent background */
+   
+   border: inherit;
+   /* use parent border */
+   
+   border-left-color: transparent;
+   /* hide left border */
+   
+   border-bottom-color: transparent;
+   /* hide bottom border */
+   
+   border-radius: 0px 4px 0px 0px;
+   /* round arrow corner, the shorthand property doesn't accept "inherit" so it is set to 4px */
+   
+   -webkit-border-radius: 0px 4px 0px 0px;
+   -moz-border-radius: 0px 4px 0px 0px;
+}
+
+.btn-arrow-right:before,
+.btn-arrow-right:after {
+   transform: rotate(45deg);
+   /* rotate right arrow squares 45 deg to point right */
+   
+   -webkit-transform: rotate(45deg);
+   -moz-transform: rotate(45deg);
+   -o-transform: rotate(45deg);
+   -ms-transform: rotate(45deg);
+}
+
+.btn-arrow-left:before,
+.btn-arrow-left:after {
+   transform: rotate(225deg);
+   /* rotate left arrow squares 225 deg to point left */
+   
+   -webkit-transform: rotate(225deg);
+   -moz-transform: rotate(225deg);
+   -o-transform: rotate(225deg);
+   -ms-transform: rotate(225deg);
+}
+
+.btn-arrow-right:before,
+.btn-arrow-left:before {
+   /* align the "before" square to the left */
+   
+   left: -11px;
+}
+
+.btn-arrow-right:after,
+.btn-arrow-left:after {
+   /* align the "after" square to the right */
+   
+   right: -11px;
+}
+
+.btn-arrow-right:after,
+.btn-arrow-left:before {
+   /* bring arrow pointers to front */
+   
+   z-index: 1;
+}
+
+.btn-arrow-right:before,
+.btn-arrow-left:after {
+   /* hide arrow tails background */
+   
+   background-color: white;
+}
+.search_broker{
+  padding: 20px;
+  border: 1px solid green;
+  margin-bottom: 2%;
+}
+.broker_profile_block{
+  min-height: 400px;
+  border: 1px solid grey;
+  margin: 2%!important;
+}
+.broker_img{
+  border-radius: 50%;
+  width: 100%;
+}
+.broker_image_block{
+  margin-top: 5%;
+}
+.broker_image_block p{
+  margin-top: 10%;
+  text-align: left;
+}
+.broker_request_headings{
+  font-size: 14px;
+  color:darkgrey;
+}
+.broker_request_content{
+  font-size: 15px;
+}
+.broker_request_invite{
+  padding: 8px;
+  text-align: center;
+}
+.borrowers_block{
+  padding: 15px;
+  border: 1px solid grey;
+  margin: 10px 0px 10px 0px;
+}
+.borrowers_block_title{
+  text-transform: uppercase;
+  font-size:12px;
+  font-weight:bold;
+  color: darkgrey;
+}
+.borrowers_block_comment_desc{
+  font-size: 14px;
+}
+.borrowers_block_desc{
+  font-weight: 16px;
+}
+.borrowers_block_comment{
+  text-transform: uppercase;
+  font-size:12px;
+  font-weight:bold;
+  color: green;  
+}
+.draft{
+  padding: 5px;
+  background: darkgrey;
+  width:36%;
+  text-align:center;
+  text-transform:uppercase;
+  color:#fff;
+  border-radius:2px;
+  font-size:12px;
+}
+.published{
+  padding: 5px;
+  background: green; 
+  width:36%;
+  text-align:center;
+  text-transform:uppercase;  
+  color:#fff;
+  border-radius:2px;
+  font-size:12px;
+}
+.expired{
+  padding: 5px;
+  background: red; 
+  width:36%;
+  text-align:center;
+  text-transform:uppercase;  
+  color:#fff;
+  border-radius:2px;
+  font-size:12px;
+}
+.cancelled{
+  padding: 5px;
+  background: #FE6463; 
+  width:36%;
+  text-align:center;
+  text-transform:uppercase;  
+  color:#fff;
+  border-radius:2px;
+  font-size:12px;
+}
+.borrower_form .borrower_label{
+  color: #3C327A;
+  font-weight: bold;
+  font-size:14px;
+}
+.borrower_tooltip{
+  width:15px;
+  border-radius:10px;
+  background:orange;
+  color:white;
+}
+.bid_tooltip{
+  width:15px;
+  border-radius:10px;
+  background:#AED7C4;
+  text-align:center;
+  color:white;
+  float:right;
+}
+.deadline{
+  font-size:13px;
+  color:orangered;
+  text-decoration: italic;
+}
+.borrower_form .field_with_errors #borrower_request_property_value {
+  width:95%;
+}
+.borrower_form_block {
+  background: whitesmoke;
+  padding:20px;
+}
+.prosposal_time_block_1{
+  height: 150px;
+  width:40%;
+  padding:20px;
+  color:#FFF;
+  margin:5px;
+  text-align:center;
+  background:#F1744C;
+}
+.prosposal_time_block_2{
+  height: 150px;
+  width:40%;
+  padding:20px;
+  margin:5px;
+  text-align:center;
+  background:whitesmoke;
+}
+.prosposal_time_block_3{
+  height: 150px;
+  width:40%;
+  padding:20px;
+  margin:5px;
+  text-align:center;
+  background:whitesmoke;
+}
+.prosposal_info_view{
+  align:left;
+  background:lightgreen;
+  border:2px solid lightgreen;
+}
+.publish_request{
+  font-size: 12px;    
+  padding:5px 0px 3px 5px;
+}
+.publish_request a {
+  color: green;
+  text-decoration: underline;
+}
+.request_actions p{
+  padding-right: 5px;
+}
+.borrower_filter {
+  padding: 5px;
+  margin-right:2px;
+  text-align: center;
+  border: 2px solid lightskyblue;
+  border-radius: 13px;
+  margin: 9px 16px 9px 16px;
+}
+.borrower_filter a{
+  text-decoration: none;
+}
+.borrower_filter.active {
+  background-color: #666;
+  color: white;
+}
+.borrower_filter.active  a{
+  color: white;
+}

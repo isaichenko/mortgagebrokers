@@ -1,0 +1,21 @@
+<%# navigation styled for Bootstrap 4.0 %>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <%= link_to "MortgageBrokers.com", root_path, class: 'navbar-brand' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button> 
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">   
+    <ul class="navbar-nav mr-auto">
+      <% if !current_user %>
+      <li>
+        <select id="user_type" class="form-control">
+            <option value="2">FOR BORROWER</option>
+            <option value="3">FOR BROKER</option>
+            <!-- <option value="4">FOR LENDER</option> -->
+        </select>        
+      </li>    
+      <% end  %>         
+    </ul>
+    <%= render 'layouts/navigation_links' %>
+  </div>
+</nav>

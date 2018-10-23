@@ -1,0 +1,45 @@
+<% @my_deals.each do |deal| %>
+<div class="container borrowers_block">
+  <div class="row">
+    <div class="col-3">
+      <p class="borrowers_block_title">From</p>
+      <p class="borrowers_block_desc"><%= deal.user.name %></p>
+    </div>
+    <div class="col-3">
+      <p class="borrowers_block_title">Date Posted</p>
+      <p class="borrowers_block_desc"><%= time_ago_in_words(deal.published_at)+" ago" %></p>      
+    </div>
+    <div class="col-3">
+      <p class="borrowers_block_title">Property Value</p>
+      <p class="borrowers_block_desc">$ <%= number_with_delimiter(deal.property_value, :delimiter => ',') %> </p>      
+    </div>
+    <div class="col-3">
+      <p class="borrowers_block_title">&nbsp;</p>
+      <div class="row">
+        <p class="bid_status_text"><%= get_bid_status_info(deal).html_safe %></p>
+      </div>
+    </div> 
+
+  </div >
+   <div class="row">
+    <div class="col-9">
+      <p class="borrowers_block_comment">Request Summary</p>
+      <p class="borrowers_block_comment_desc">
+        <%= deal.description %>, <%= deal.mortagage_level %> , <%= score_value(deal.credit_score) %> Credit Score <br/>
+        In <%= deal.property_address%>
+      </p>
+    </div>
+    <div class="col-3">
+      <p></p>      
+      <div class="row request_actions">        
+        <% if !deal.expired %> 
+          <p><%= check_bid_status(deal).html_safe%> </p>
+        <% elsif  deal.expired%>
+          <p class="<%= deal.status %>"> Request Expired </p> 
+        <% end %>      
+    </div>
+   </div>  
+  </div>
+</div>
+<% end %>
+<%= paginate @my_deals %>

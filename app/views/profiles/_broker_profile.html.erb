@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <p  class="profile_block_title">First Name</p>
+      <p><%= current_user.first_name %></p>
+    </div>
+    <div class="col-4">
+      <p  class="profile_block_title">Last Name</p>
+      <p><%= current_user.last_name %></p>
+    </div>     
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p  class="profile_block_title">Title</p>
+      <p><%= @profile.title  %></p>
+    </div>     
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p  class="profile_block_title">Languages I speak</p>
+      <p><%= display_lang(@profile.languages) %></p>
+    </div>     
+  </div>  
+  <div class="row">
+    <div class="col-12">
+      <p  class="profile_block_title">Areas I serve</p>
+      <p><%= display_areas(@profile.areas) %></p>
+    </div>     
+  </div>  
+  <div class="row">
+    <div class="col-4">
+      <p  class="profile_block_title">Company </p>
+      <p><%= @profile.company %></p>
+    </div>
+    <div class="col-4">
+      <p  class="profile_block_title">Company Address</p>
+      <p><%= @profile.company_address %></p>
+    </div>
+    <div class="col-4">
+      <p  class="profile_block_title">Telephone Numbers/Fax</p>
+      <p><%= @profile.telephone_numbers %></p>
+    </div>              
+  </div>  
+  <div class="row">
+    <div class="col-12">
+      <p  class="profile_block_title">Social Media </p>
+      <p><%= @profile.facebook_link %></p>
+      <p><%= @profile.twitter_link %></p>
+      <p><%= @profile.youtube_link %></p>
+      <p><%= @profile.linked_in_link %></p>
+    </div>             
+  </div> 
+  <div class="row">
+    <div class="col-12">
+      <p  class="profile_block_title">About Me </p>
+      <p><%= @profile.description %></p>
+    </div>             
+  </div>   
+</div>

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mortgage_type: MyString
+  property_address: MyText
+  property_value: 1
+  credit_score: 1
+  mortagage_level: MyString
+  description: MyText
+  user_id: 1
+  place: MyText
+  latitude: 9.99
+  longitude: 9.99
+  status: MyString
+  bidding_end_time: 2018-06-29 11:25:22
+
+two:
+  mortgage_type: MyString
+  property_address: MyText
+  property_value: 1
+  credit_score: 1
+  mortagage_level: MyString
+  description: MyText
+  user_id: 1
+  place: MyText
+  latitude: 9.99
+  longitude: 9.99
+  status: MyString
+  bidding_end_time: 2018-06-29 11:25:22

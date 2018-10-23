@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  languages: MyText
+  mortgage_types: MyText
+  areas: MyText
+  company: MyString
+  company_address: MyText
+  telephone_numbers: MyText
+  facebook_link: MyString
+  twitter_link: MyString
+  youtube_link: MyString
+  linked_in_link: MyString
+  description: MyText
+
+two:
+  title: MyString
+  languages: MyText
+  mortgage_types: MyText
+  areas: MyText
+  company: MyString
+  company_address: MyText
+  telephone_numbers: MyText
+  facebook_link: MyString
+  twitter_link: MyString
+  youtube_link: MyString
+  linked_in_link: MyString
+  description: MyText

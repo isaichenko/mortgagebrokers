@@ -1,0 +1,24 @@
+<div class="panel panel-default devise-bs offset-md-3 col-md-6">
+  <div class="panel-body"> 
+      <div class="form-group">
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name, value: params[:profile][:first_name] , class: 'form-control'%>
+    </div>
+    <div class="form-group">
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name , value: params[:profile][:last_name], class: 'form-control'%>
+    </div> 
+    <div class="form-group">
+      <%= f.label "ID PROOF 1" %><br />
+      <%= f.file_field :id_proof_1 %>
+    </div>
+    <div class="form-group">
+      <%= f.label "ID PROOF 2" %><br />
+      <%= f.file_field :id_proof_2 %>
+    </div>
+    <div class="form-group">
+      <%= f.label "Broker License" %><br />
+      <%= f.file_field :license %>
+    </div>        
+</div>
+</div>

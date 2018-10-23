@@ -1,0 +1,18 @@
+ 
+<% if @profile.errors.any? %>
+  <div id="errors">
+    <ul>
+    <% @profile.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  <%= form_for build_profile(@profile), html: { role: 'form' } do |f| %>
+    <% if params[:all].nil? %>
+      <%= render 'profiles/steps/current_step', f: f %>
+    <% else %>
+      <%= render 'profiles/steps/all_steps', f: f %>
+    <% end %>
+  <% end %>

@@ -1,0 +1,50 @@
+<% @borrower_requests.each do |borrower_request| %>
+<div class="container borrowers_block">
+  <div class="row">
+    <div class="col-3">
+      <p class="borrowers_block_title">From</p>
+      <p class="borrowers_block_desc"><%= borrower_request.user.name %></p>
+    </div>
+    <div class="col-3">
+      <p class="borrowers_block_title">Expected Credit Score</p>
+      <p class="borrowers_block_desc"><%= borrower_request.credit_score %>(<%= score_value(borrower_request.credit_score) %>)</p>      
+    </div>
+    <div class="col-3">
+      <p class="borrowers_block_title"><%= borrower_request.publish ? "Requested" : "Created" %></p>
+      <p class="borrowers_block_desc"><%= borrower_request.publish ? (time_ago_in_words(borrower_request.published_at)+" ago") : (time_ago_in_words(borrower_request.created_at)+" ago") %></p>      
+    </div>
+    <div class="col-3">
+      <p class="borrowers_block_title">Status</p>
+      <div class="row">
+        <p class="<%= borrower_request.status %>"><%= borrower_request.status %></p>&nbsp;
+        <p class="publish_request"><%= link_to 'Publish Request' ,publish_request_borrower_request_path(borrower_request),method: 'post' ,data:{confirm: "Are you sure? Want to publish it ?"} if borrower_request.draft %></p>        
+      </div>
+    </div> 
+
+  </div >
+  <div class="row">
+    <div class="col-9">
+      <p class="borrowers_block_comment">Request Summary</p>
+      <p class="borrowers_block_comment_desc"><%= borrower_request.mortagage_level %> for $<%= borrower_request.property_value %>USD <br/>
+        In <%= borrower_request.property_address%></p>
+    </div>
+    <div class="col-3">
+      <p>&nbsp;</p>      
+      <div class="row request_actions">
+       <p>
+        <% if borrower_request.publish %>
+          <%= link_to 'View Proposals', borrower_request_path(borrower_request) , class: 'btn btn-sm btn-info' %>          
+        <% elsif  borrower_request.approved %>
+           <%= link_to 'Contact Broker', contact_broker_borrower_request_path(borrower_request.approved_bid_id), class: 'btn btn-sm btn-warning' %>                    
+        <% end %>
+        <%= link_to 'Cancel Request',cancel_request_borrower_request_path(borrower_request),method: 'post' ,data:{confirm: "Are you sure? Want to Cancel it ?"} , class: 'btn btn-sm btn-danger' if  borrower_request.can_cancel %>          
+        </p> 
+       <p><%= link_to 'Edit Request', edit_borrower_request_path(borrower_request) , class: 'btn btn-sm btn-info' if borrower_request.draft%></p>           
+      </p>
+    </div>
+  </div>  
+</div>
+</div>
+
+<% end %>
+<%= paginate @borrower_requests %>

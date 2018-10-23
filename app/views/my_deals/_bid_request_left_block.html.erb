@@ -1,0 +1,21 @@
+<div class="container borrower_form_block" style="margin-left:-20px;">
+  <div class="col-12">
+    <p> <%=image_tag("address.jpg") %></p>
+  </div>  
+  <div class="col-12">
+    <p  class="borrowers_block_title">Property Value</p>
+    <p>$<%=@my_deal.property_value %></p>
+  </div>
+  <div class="col-12">  
+    <p  class="borrowers_block_title">Closing Date</p>
+    <p><%= get_closing_date(@my_deal.bidding_end_time) %></p>
+  </div>  
+  <div class="col-12">  
+    <p  class="borrowers_block_title">Type of Mortgage</p>
+    <p><%=@my_deal.mortgage_type %></p> 
+  </div>  
+  <div class="col-12 bid_time_block">     
+    <p  class="borrowers_block_title">Time Left</p>
+    <p><%=get_bidding_hours(@my_deal.bidding_end_time)  %></p>  
+  </div>    
+</div>

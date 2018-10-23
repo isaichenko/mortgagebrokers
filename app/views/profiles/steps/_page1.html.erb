@@ -1,0 +1,61 @@
+
+<div class="panel panel-default devise-bs offset-md-3 col-md-6">
+  <%= f.hidden_field :user_id ,value: current_user.id %>
+  <div class="panel-body">    
+    <div class="form-group">
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name, value: current_user.first_name , class: 'form-control'%>
+    </div>
+    <div class="form-group">
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name , value: current_user.last_name, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+      <%= f.label :title %><br />
+      <%= f.text_field :title , class: 'form-control'%>
+    </div>
+    <div class="form-group">
+      <%= f.label :languages %><br />
+      <%= f.select :languages, options_for_select(@languages,@profile.languages),{}, {:multiple => true ,class: "chosen-select form-control"} %>
+    </div>
+    <div class="form-group">
+      <%= f.label :mortgage_types %><br />    
+      <%= f.select :mortgage_types, options_for_select(MORTGAGE_TYPES,@profile.mortgage_types), {}, {multiple: true, class: "form-control"} %>
+    </div>    
+    <div class="form-group">
+      <%= f.label :areas %><br />
+      <%#= f.text_field :areas , class: 'form-control' ,id: "gmaps-input-address"%>
+      <input type="text" class="form-control area_select" id="gmaps-input-address" >
+      <%= f.text_area :areas , class: 'form-control area_select_val' , style: 'display:none;'%>
+      <div class="areas"> </div><br/>
+    </div>
+    <div class="form-group">
+      <%= f.label :company %><br />
+      <%= f.text_field :company , class: 'form-control'%>
+    </div>
+    <div class="form-group">
+      <%= f.label :company_address %><br />
+      <%= f.text_area :company_address , class: 'form-control'%>
+    </div>
+    <div class="form-group">
+      <%= f.label "Telephone/Fax" %><br />
+      <%= f.number_field :telephone_numbers, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :description %><br />
+      <%= f.text_area :description , class: 'form-control'%>
+    </div>
+    <div class="form-group">
+      <%= f.label :twitter_link %><br />
+      <%= f.text_field :twitter_link , class: 'form-control'%>
+    </div>
+    <div class="form-group">
+      <%= f.label :facebook_link %><br />
+      <%= f.text_field :facebook_link , class: 'form-control'%>
+    </div>
+    <div class="form-group">
+      <%= f.label :youtube_link %><br />
+      <%= f.text_field :youtube_link , class: 'form-control'%>
+    </div>            
+</div>
+</div>

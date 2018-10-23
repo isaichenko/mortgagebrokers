@@ -1,0 +1,78 @@
+// Place all the styles related to the MyDeals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.bid_time_block{
+  height: 100px;
+  padding:20px;
+  color:#FFF;
+  text-align:center;
+  background:#F1744C;
+}
+.bid_msg_block{
+  height: 50px;
+  padding:15px;
+  color:#FFF;
+  text-align:center;
+  background:#23B270;
+}
+.bid_time_block p{
+  color:#FFF;
+}
+.bid_right_block_title{
+  font-weight: bold;
+  font-size:18px;
+}
+.bid_left_block_title{
+  font-weight: bold;
+  font-size:20px;
+  color:#3A2F74
+}
+.bid_borrowers_block_title{
+  text-transform: uppercase;
+  font-size:12px;
+  font-weight:bold;
+  color: darkgrey;
+}
+.bid_borrowers_block_title span{
+  color: #3A2F74;
+}
+.bid_req_info_block{
+  margin: 20px;
+  padding:20px;
+  background:#E4EFEB;
+  border:1px solid #18AF74;
+}
+.bid_req_info_description{
+  color: #black;
+  font-size:15px;
+}
+.bid_req_info{
+  color: #3A2F74;
+  text-align: center;
+}
+.bid_status_text{
+  font-size: 14px;
+}
+.contact_borrower_name img {
+  border-radius:50%;
+  float:left;
+  width: 50px;
+  height:50px;
+}
+.contact_borrower_img{
+  border-radius:50%;
+  float:left;
+  width: 60px;
+  height:50px;
+}
+
+.contact_borrower_name p {
+  float:left;
+  padding-left: 10px;
+}
+.contact_borrower_name p span {
+  text-transform: uppercase;
+  font-size:12px;
+  font-weight:bold;
+  color: darkgrey;
+}

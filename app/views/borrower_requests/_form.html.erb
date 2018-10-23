@@ -1,0 +1,104 @@
+<%= form_with(model: borrower_request, local: true,html: { role: 'form' }) do |form| %>
+  <% if borrower_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(borrower_request.errors.count, "error") %> prohibited this borrower_request from being saved:</h2>
+
+      <ul>
+      <% borrower_request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.hidden_field :user_id ,value: current_user.id  %>
+  <div class="form-group text-center">
+    <%= form.label "What type of mortgage you are looking for ?" ,class: 'borrower_label'%>
+    <span data-toggle="tooltip" class="borrower_tooltip" data-html="true" title="Please select the type of mortgage you are looking for.">?</span>
+    <hr/>    
+    <div class="input-group">
+      <%= form.collection_radio_buttons(:mortgage_type, MORTGAGE_TYPES, :to_s, :to_s, html_options: { class: 'form-control btn-group radioBtn' }) do |b| %>
+        <div class="col-3">
+          <%= b.label { b.radio_button + " " + b.text } %>
+        </div>
+      <% end %>   
+    </div> 
+  </div>
+  <div class="clearfix">&nbsp;</div>
+  <div class="form-group text-center">
+    <h6  class='borrower_label'> Where is the property located ? <span data-toggle="tooltip" class="borrower_tooltip" data-html="true" title="Please mention where the property is located.">?</span></h6>
+    
+    <hr/>
+  </div>  
+  <div class="clearfix">&nbsp;</div>
+  <div class="row">
+       <div class="col-12">
+        <div class="form-group">
+          <%= form.label :property_address %>
+          <%= form.text_field :property_address, class: 'form-control address_select',id:'address-input' %>
+          <%= form.hidden_field :latitude %>
+          <%= form.text_area :place , class: 'place_select_val', style: 'display:none;'%>
+          <%= form.hidden_field :longitude %>       
+        </div>      
+      </div>                  
+  </div>
+  <div class="clearfix">&nbsp;</div>
+  <div class="form-group text-center">
+    <h6 class='borrower_label'> What is the property value ? <span data-toggle="tooltip" class="borrower_tooltip" data-html="true" title="Please mention the property value">?</span></h6>
+    
+    <hr/>
+  </div> 
+  <div class="clearfix">&nbsp;</div>
+  <div class="row">    
+    <div class="col-12">
+      <div class="form-group">
+        <%= form.label :property_value %>
+      </div>
+      <div class="input-group">        
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">$</span>
+        </div>
+        <%= form.number_field :property_value, class: 'form-control col-12',onkeydown: 'javascript: return event.keyCode !== 69' %>
+      </div>
+    </div>    
+  </div>
+  <div class="clearfix">&nbsp;</div>
+  <div class="form-group text-center">
+    <h6 class='borrower_label'> What is your expected credit score ? <span data-toggle="tooltip" class="borrower_tooltip" data-html="true" title="What is your expecting credit score ?">?</span></h6>
+    
+    <hr/>
+  </div> 
+  <div class="form-group">
+    <h5 class="text-center" id="credit_score_val"></h5>
+    <%= form.range_field :credit_score, :min=>300, :max=>900, :class=>"credit_score", :id=>"borrower_request_credit_score"%>
+  </div>
+  <div class="clearfix">&nbsp;</div>
+  <div class="form-group text-center">
+    <%= form.label "What mortgage it is going to be ?" ,class: 'borrower_label'%>
+    <span data-toggle="tooltip" class="borrower_tooltip" data-html="true" title="What mortgage it is going to be ?">?</span>
+    <div class="clearfix">&nbsp;</div>
+    <div class="input-group">
+      <%= form.collection_radio_buttons(:mortagage_level, [["1st First Mortgage","1st Mortgage"], ["2nd Second Mortgage","2nd Mortgage"], ["3rd Third Mortgage","3rd Mortgage"]], :last, :first, html_options: { class: 'form-control btn-group radioBtn' }) do |b| %>
+          <div class="col-4">
+            <%= b.label { b.radio_button + " " + b.text } %>
+          </div>
+      <% end %>   
+    </div>         
+  </div>
+  <div class="clearfix">&nbsp;</div>
+  <div class="form-group text-center">
+    <h6 class='borrower_label'> Add Comments to your request <span data-toggle="tooltip" class="borrower_tooltip" data-html="true" title="Please add some brief description about your request">?</span></h6>
+
+    <hr/>
+  </div> 
+  <div class="form-group text-center">
+    <%= form.label "What would you like brokers to know ?" %>
+    <%= form.text_area :description, rows: 7,class: 'form-control' %>
+  </div>
+  <div class="clearfix">&nbsp;</div>
+    <p class="deadline">** Your request will be placed for 72 hours(deadline for brokers to place a bid) once it published.</p>
+  <div class="actions">
+    <%= form.submit 'Continue' , class: 'btn btn-primary btn-lg btn-block'%>
+  </div>
+<% end %>
+<div class="clearfix">&nbsp;</div>
+<div class="clearfix">&nbsp;</div>

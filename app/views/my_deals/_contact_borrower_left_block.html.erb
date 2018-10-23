@@ -1,0 +1,26 @@
+<div class="container borrower_form_block" style="margin-left:-20px;">
+  <div class="col-12">
+    <p> <%=image_tag("address.jpg") %></p>
+  </div>  
+  <div class="col-12">
+    <p  class="borrowers_block_title">Property Value</p>
+    <p>$<%=number_with_delimiter(@borrower_request.property_value, :delimiter => ',') %></p>
+  </div>
+  <div class="col-12">  
+    <p  class="borrowers_block_title">Closing Date</p>
+    <p><%= get_closing_date(@borrower_request.bidding_end_time) %></p>
+  </div>  
+  <div class="col-12">  
+    <p  class="borrowers_block_title">Type of Mortgage</p>
+    <p><%=@borrower_request.mortgage_type %></p> 
+  </div> 
+  <hr/>  
+  <div class="col-12 bid_msg_block">  
+    <p>Messages</p>
+  </div>   
+  <hr/>
+  <div class="col-12 ">
+    <%=image_tag("default_pic.png",class: "contact_borrower_img") %>
+    <p><span>Borrower</span><br/><%=@borrower_request.user.name%></p>
+  </div>  
+</div>

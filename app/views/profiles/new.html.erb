@@ -1,0 +1,70 @@
+<div class="panel panel-heading">
+<h1 class="text-center">Broker Verification Process (step <%= @profile.current_step + 1 %>)</h1>
+<div class="panel-body"> 
+<%= render 'form' %>
+</div>
+<script type="text/javascript">
+$(function() {
+  var elements, stripe, style;
+  stripe = Stripe("<%= ENV['STRIPE_TEST_PUBLISH_KEY'] %>");
+  elements = stripe.elements();
+  style = {
+    base: {
+      color: '#32325d',
+      lineHeight: '18px',
+      fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+      fontSmoothing: 'antialiased',
+      fontSize: '16px',
+      '::placeholder': {
+        color: '#aab7c4'
+      }
+    },
+    invalid: {
+      color: '#fa755a',
+      iconColor: '#fa755a'
+    }
+  };
+  $('#profile_package_id').change(function() {
+    var card;
+    var profile_package = $('#profile_package_id option:selected').text();
+    if ((profile_package !== 'Select Package') && (profile_package.indexOf("Free") == -1)) {
+      $('.card_info').show();
+      card = elements.create('card', {
+        hidePostalCode: true,
+        style: style
+      });
+      card.mount('#card-element');
+      card.addEventListener('change', function(event) {
+        var displayError;
+        displayError = document.getElementById('card-errors');
+        if (event.error) {
+          displayError.textContent = event.error.message;
+        } else {
+          displayError.textContent = '';
+        }
+      });
+      $('#new_profile').submit(function(event) {
+        if($('#profile_current_step').val() == '2'){
+          if ($('#profile_package_id option:selected').text().indexOf("Free") == -1) {
+            stripe.createToken(card).then(function(result) {
+              var errorElement, form$;
+              if (result.error) {
+                errorElement = document.getElementById('card-errors');
+                errorElement.textContent = result.error.message;
+              } else {
+                form$ = $('#new_profile');
+                $('#profile_stripe_token').val(result.token.id);
+                form$.find('.profile_submit').prop('disabled', true)
+                form$.get(0).submit();
+              }
+            });
+            return false;
+          }
+        }
+      });
+    } else {
+      $('.card_info').hide();
+    }
+  });
+});	
+</script>

@@ -1,0 +1,74 @@
+<%= form_with(model: bid, url: create_bid_my_deal_path(@my_deal.id),local: true,html: { role: 'form' }) do |form| %>
+  <% if bid.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bid.errors.count, "error") %> prohibited this bid from being saved:</h2>
+
+      <ul>
+      <% bid.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label "Rate(%)" %>
+    <span data-toggle="tooltip" class="bid_tooltip" data-html="true" title="Please enter the bid rate percentage">?</span>
+    <%= form.number_field :rate ,class: 'form-control'%>
+  </div>
+  <%= form.hidden_field :user_id ,value: current_user.id ,class: 'form-control'%>
+  <%= form.hidden_field :borrower_request_id ,value: @my_deal.id ,class: 'form-control'%>
+  <div class="form-group">
+    <%= form.label :mortgage_type %>
+    <span data-toggle="tooltip" class="bid_tooltip" data-html="true" title="Please select the mortgage type ">?</span>
+    <div class="input-group">
+      <%= form.collection_radio_buttons(:mortgage_type, BID_MORTGAGE_TYPES, :to_s, :to_s, html_options: { class: 'form-control btn-group radioBtn' }) do |b| %>
+        <div class="col-3">
+          <%= b.label { b.radio_button + " " + b.text } %>
+        </div>
+      <% end %>   
+    </div>  
+  </div>
+  <div class="form-group">
+    <%= form.label :term %>
+    <span data-toggle="tooltip" class="bid_tooltip" data-html="true" title="Please enter mortgage duration ">?</span>
+    <%= form.select :term, options_for_select(TERM),{prompt: 'select term'}, {:class => 'form-control'}%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :amortization %>
+    <span data-toggle="tooltip" class="bid_tooltip" data-html="true" title="Please enter amortization value">?</span>
+    <%= form.number_field :amortization ,class: 'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label "broker Fee(%)" %>
+    <span data-toggle="tooltip" class="bid_tooltip" data-html="true" title="Please enter broker fee percentage">?</span>
+    <%= form.number_field :broker_fee,class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label "Lender Fee(%)" %>
+    <span data-toggle="tooltip" class="bid_tooltip" data-html="true" title="Please enter lender fee percentage">?</span>
+    <%= form.number_field :lender_fee ,class: 'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :pre_payment_penalties %>
+    <span data-toggle="tooltip" class="bid_tooltip" data-html="true" title="Provide information on any pre payments or penalities">?</span>
+    <%= form.text_field :pre_payment_penalties ,class: 'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :comments %>
+    <span data-toggle="tooltip" class="bid_tooltip" data-html="true" title="Write Comments about your bid/offer">?</span>
+    <%= form.text_area :comments ,class: 'form-control'%>
+  </div>
+  <div class="row bid_req_info_block">
+    <p class="bid_req_info"> <i class="info"></i> so you know</p>
+    <p class="bid_req_info_description">The borrower will review your bid and accept if your BID is better than other broker. Then full information of the borrower will be revealed and you will be able to message each other to dicuss all the details of the deal and send all required documents.</p>
+  </div>
+  <div class="actions">
+    <%= form.submit 'BID NOW' , class: 'btn btn-success btn-lg btn-block'%>
+  </div>
+<% end %>

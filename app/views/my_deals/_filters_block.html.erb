@@ -1,0 +1,7 @@
+<div class="row">
+  <% BID_STATUS.merge(all:"all").each do |key, val|%>
+    <div class="col-2 borrower_filter <%= is_active_filter(BID_STATUS[key]) %>">
+      <%= link_to "#{cap_status(key)}(#{@deal_counts[key.to_sym]})",{action: 'index',filter: BID_STATUS[key]} %>
+    </div>  
+  <% end %>    
+</div>

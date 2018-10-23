@@ -1,0 +1,5 @@
+<%= hidden_field_tag :all, 1 %>
+<% Profile.total_steps.times do |step| %>
+  <%= render "profiles/steps/page#{step + 1}", f: f %>
+<% end %>
+<%= f.submit %>

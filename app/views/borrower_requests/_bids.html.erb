@@ -1,0 +1,35 @@
+<% if @bids.any? %>
+  <% @bids.each do |bid| %>
+  <div class="container borrowers_block">
+    <div class="row">
+      <div class="col-3">
+        <p class="borrowers_block_desc"><%= bid.user.name %></p>
+      </div>
+      <div class="col-3">
+        <p class="borrowers_block_title">Bid rate</p>
+        <p class="borrowers_block_desc"><%= bid.rate %> %</p>      
+      </div>
+      <div class="col-3">
+        <p class="borrowers_block_title">Place</p>
+        <p class="borrowers_block_desc"><%= get_bid_position(@bids,bid.rate) %></p>      
+      </div>
+      <div class="col-3">
+        <p class="borrowers_block_desc"><%= link_to 'Select This Broker',accept_broker_borrower_request_path(bid),method: 'post' ,data:{confirm: "Are you sure? Want to Select This Broker ?"} ,class: 'btn btn-mini btn-primary'%></p>
+      </div> 
+
+    </div >
+    <div class="row">
+      <div class="col-3">
+        <p class="borrowers_block_title">Last Bid</p>
+        <p class="borrowers_block_desc"><%= time_ago_in_words(@last_bid) + " ago" %></p>
+      </div>      
+      <div class="col-9">
+        <p class="borrowers_block_comment">Cover Letter</p>
+        <p class="borrowers_block_comment_desc"><%= bid.comments %></p>
+      </div>
+    </div>  
+  </div>
+  <% end %>  
+<% else %>
+  <p> No proposals yet for this request</p>
+<% end %> 

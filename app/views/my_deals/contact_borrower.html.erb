@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-12">
+    <p class="bid_left_block_title"><%= @borrower_request.property_address%></p> 
+      <p class="bid_borrowers_block_title">Posted <span> <%= time_ago_in_words(@borrower_request.published_at).gsub("about","")+" ago" %></span></p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <%= render partial: 'contact_borrower_left_block' %>
+    </div>
+    <div class="col-9">
+      <%= render partial: 'contact_borrower_right_block' %>
+    </div>    
+  </div>
+</div>

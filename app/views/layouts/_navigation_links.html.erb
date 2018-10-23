@@ -1,0 +1,24 @@
+<%# add navigation links to this file %>
+<ul class="navbar-nav ml-auto">
+  <% if user_signed_in? %>
+  <% if current_user.role.name == BORROWER %>
+    <li class="nav-item <%= is_active_controller('borrower_requests') %>">
+     <%= link_to 'POST A REQUEST', borrower_requests_path, class: 'nav-link' %>
+    </li>
+  <% end %>
+  <% end%>
+   <% if user_signed_in? && current_user.role.name == BROKER %>
+      <li class='nav-item  <%= is_active_controller('my_deals') %>'><%= link_to('My Deals', my_deals_path, class: 'nav-link') %></li>
+   <% end %>    
+   <% if user_signed_in? %>
+      <li class="dropdown nav-item">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"> <%= current_user.name %> <span class="caret"></span></a>
+        <ul class="dropdown-menu profile_dropdown" role="menu">
+          <li class='nav-item'><%= link_to('View Profile', profile_path(current_user), class: 'dropdown-item') %></li>
+          <li class='nav-item' ><%= link_to('Logout', destroy_user_session_path, :method => :delete, class: 'dropdown-item') %></li>
+        </ul>
+      </li> 
+   <% else %>
+      <li class='nav-item'><%= link_to 'Login', new_user_session_path, class: 'nav-link' %></li>
+   <% end %>     
+</ul>

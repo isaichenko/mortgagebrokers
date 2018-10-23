@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <p class="bid_right_block_title">Borrower Info</p>
+      <p><%=@borrower.name%></p>      
+    </div>    
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <p  class="borrowers_block_title">Location</p>
+      <p><%=@my_deal.property_address %></p>
+    </div>
+    <div class="col-4">
+      <p  class="borrowers_block_title">Credit Score</p>
+      <p><%=@my_deal.credit_score %>(<%= score_value(@my_deal.credit_score) %>)</p>
+    </div>
+    <div class="col-4">
+      <p  class="borrowers_block_title">Security</p>
+      <p><%=@my_deal.mortagage_level %></p>
+    </div>        
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p  class="borrowers_block_title">Comments</p>
+      <p><%= @my_deal.description %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="panel panel-default offset-md-12 col-md-12 borrower_form_block">
+      <div class="panel-heading ">
+         <h5 class="text-center">Make an offer to Borrower:</h5>
+      </div>
+     <div class="panel-body borrower_form">
+      <%= render 'bid_form', bid: @bid %>
+      </div>
+    </div>
+  </div>
+</div>
+

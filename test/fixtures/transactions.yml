@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  bid_id: 1
+  transaction_type: MyString
+  transaction_source: MyString
+  coins: 1
+  transacted_at: 2018-07-03 12:17:01
+
+two:
+  user_id: 1
+  bid_id: 1
+  transaction_type: MyString
+  transaction_source: MyString
+  coins: 1
+  transacted_at: 2018-07-03 12:17:01
