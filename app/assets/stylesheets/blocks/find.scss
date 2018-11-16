@@ -1,0 +1,322 @@
+.find_box {
+	display: block;
+	position: relative;
+	text-align: center;
+	background-color: $color_white;
+	margin-bottom: 40px;
+	padding: 33px 0 50px;
+	transition: 0.2s;
+	z-index: 5;
+
+	&.find_small {
+		padding-bottom: 38px;
+	}
+
+	&.find_front {
+		padding-bottom: 50px;
+	}
+
+	.header_box + & {
+		margin-top: -36px;
+	}
+
+	.title_box {
+		margin-bottom: 28px;
+	}
+
+	.items {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		position: relative;
+		margin: 0 -20px -33px;
+	}
+
+	.item {
+		display: block;
+		width: 25%;
+		box-sizing: border-box;
+		padding: 0 20px;
+		margin-bottom: 36px;
+		position: relative;
+		z-index: 1;
+
+		&:hover {
+			z-index: 10;
+		}
+
+	}
+
+	.item_double {
+		width: 50%;
+	}
+
+	.item_full {
+		width: 100%;
+		margin-top: -5px;
+	}
+
+	.label {
+		display: block;
+		position: relative;
+		color: $color_black;
+		font-size: 14px;
+		font-weight: 500;
+		margin-bottom: 6px;
+	}
+
+	.field {
+		display: block;
+		position: relative;
+
+		&:before {
+			display: block;
+			position: absolute;
+			left: 10px;
+			top: 50%;
+			margin-top: -8px;
+			width: 16px;
+			height: 16px;
+			z-index: 12;
+			color: $color_gray;
+			font-size: 12px;
+			font-weight: 700;
+			line-height: 16px;
+			text-transform: uppercase;
+		}
+
+		&.icon_1:before {
+			content: '';
+			background: url(../images/ico_arrow.svg) 50% 50% no-repeat;
+			background-size: contain;
+		}
+
+		&.icon_2:before {
+			content: '$';
+			left: 6px;
+		}
+
+	}
+
+	.field_range {
+		display: flex;
+		border: 1px solid $color_light_gray;
+
+		.dash {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-grow: 0;
+			font-weight: bold;
+			margin: 0 5px;
+			color: $color_gray;
+		}
+
+		input {
+			flex-grow: 1;
+			border: none;
+		}
+
+	}
+
+	.btn {
+		width: 100%;
+	}
+
+	.filers {
+		display: block;
+		text-align: center;
+		font-size: 10px;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: $color_gray;
+		line-height: 1.25;
+		margin-top: -18px;
+		margin-bottom: -3px;
+
+		a {
+			display: inline-block;
+			color: $color_black;
+			letter-spacing: 1px;
+			margin: 0 5px;
+
+			&:hover {
+				color: $color_green;
+			}
+
+		}
+
+	}
+
+	.expanded {
+		display: block;
+		position: relative;
+	}
+
+	.collapsed {
+		display: none;
+		position: relative;
+	}
+
+	.expand {
+		display: none;
+		position: absolute;
+		bottom: -12px;
+		left: 50%;
+		margin-left: -48px;
+		width: 100px;
+		padding-bottom: 8px;
+		text-align: center;
+		font-size: 10px;
+		font-weight: bold;
+		line-height: 11px;
+		letter-spacing: 1px;
+		color: $color_gray;
+		background-color: $color_white;
+		text-transform: uppercase;
+		box-sizing: border-box;
+		border: 2px solid $color_background;
+		border-top: none;
+		border-bottom-right-radius: 21px;
+		border-bottom-left-radius: 21px;
+		cursor: pointer;
+		transition: 0.2s;
+
+		&:hover {
+			color: $color_green;
+		}
+
+	}
+
+	@include desktop_small {
+		padding-bottom: 30px;
+		margin-bottom: 20px;
+
+		&.find_small {
+			padding-bottom: 30px;
+
+			.item {
+				margin-bottom: 26px;
+			}
+
+		}
+
+		&.find_expandable {
+			padding-top: 14px;
+		}
+
+		.expanded {
+			display: none;
+		}
+
+		.expand {
+			display: block;
+		}
+
+		.collapsed {
+			display: block;
+		}
+
+		.title_box {
+			margin-bottom: 30px;
+		}
+
+		.items {
+			margin: 0 -10px -35px;
+		}
+
+		.item {
+			width: 50%;
+			padding: 0 10px;
+			margin: 0 0 35px;
+		}
+
+		.item_double {
+			width: 100%;
+			margin-top: -1px;
+		}
+
+		.item_full {
+			margin-top: 5px;
+			width: 100%;
+		}
+
+	}
+
+	@include tablet_large {
+
+		.header_box + & {
+			margin-top: -30px;
+		}
+
+	}
+
+	@include tablet_small {
+		margin-left: 10px;
+		margin-right: 10px;
+		padding: 14px 0 10px;
+
+		.header_box + & {
+			margin-top: -15px;
+		}
+
+		.filers {
+			margin-top: -8px;
+			margin-bottom: 10px;
+		}
+
+		.title_box {
+			margin-bottom: 21px;
+		}
+
+		.items {
+			margin: 0 0 -14px;
+		}
+
+		.item {
+			width: 100%;
+			padding: 0;
+			margin-bottom: 26px;
+		}
+
+		.item_full {
+			margin-top: 4px;
+		}
+
+		.item_btn {
+			margin-top: 3px;
+		}
+
+	}
+
+	@include phone_large {
+		margin-bottom: 10px;
+		padding-bottom: 20px;
+
+		&.find_small {
+			padding-bottom: 10px;
+		}
+
+		.filers {
+			margin-bottom: 0;
+		}
+
+		.items {
+			margin-bottom: -16px;
+		}
+
+		.expand {
+			bottom: -7px;
+		}
+
+		&.find_small {
+
+			.items {
+				margin-bottom: -26px;
+			}
+
+		}
+
+	}
+
+}

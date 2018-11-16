@@ -1,0 +1,93 @@
+.heading_box {
+	display: block;
+	position: relative;
+	padding: 40px 0;
+	margin-bottom: 40px;
+	background-color: $color_purple;
+	text-align: center;
+	color: $color_white;
+
+	.header_box + & {
+		margin-top: -36px;
+	}
+
+	.icon {
+		display: block;
+		width: 100px;
+		margin: 0 auto 14px;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+
+	}
+
+	.title {
+		display: block;
+		font-size: 30px;
+		font-weight: 700;
+		line-height: 1.25;
+		margin-bottom: 8px;
+	}
+
+	.text {
+		display: block;
+		max-width: 930px;
+		font-size: 20px;
+		line-height: 1.25;
+		margin: 0 auto 14px;
+	}
+
+	@include desktop_small {
+		padding: 20px 0;
+		margin-bottom: 20px;
+
+		.title {
+			font-size: 24px;
+			margin-bottom: 12px;
+		}
+
+		.text {
+			font-size: 16px;
+		}
+
+	}
+
+	@include tablet_large {
+
+		.header_box + & {
+			margin-top: -30px;
+		}
+
+	}
+
+	@include tablet_small {
+
+		.header_box + & {
+			margin-top: -15px;
+		}
+
+		.icon {
+			margin-bottom: 7px;
+		}
+
+		.title {
+			font-size: 20px;
+			margin-bottom: 4px;
+		}
+
+		.text {
+			font-size: 14px;
+			margin-bottom: 4px;
+		}
+
+	}
+
+	@include phone_large {
+		padding: 10px 0;
+		margin-bottom: 10px;
+	}
+	
+}

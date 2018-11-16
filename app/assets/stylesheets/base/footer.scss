@@ -1,0 +1,114 @@
+.footer_box {
+	display: block;
+	position: relative;
+	background-color: $color_white;
+	border-top: 2px solid $color_green;
+
+	.footer {
+		display: flex;
+		align-items: center;
+		padding: 20px;
+	}
+
+	.menu {
+		display: flex;
+		align-items: center;
+		flex-basis: 40%;
+		flex-grow: 1;
+
+		li {
+			display: inline-block;
+			margin-right: 20px;
+		}
+
+		a {
+			display: block;
+			font-size: 10px;
+			font-weight: 700;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			color: $color_black;
+
+			&:hover {
+				color: $color_green;
+			}
+
+		}
+
+	}
+
+	.logo_wrapper {
+		margin: 0 20px;
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+
+	.logo {
+		display: block;
+		position: relative;
+		cursor: pointer;
+
+		svg {
+			display: block;
+			width: 30px;
+			height: 17px;
+			transition: 0.2s;
+			fill: $color_gray;
+		}
+
+		&:hover {
+
+			svg {
+				fill: $color_green;
+			}
+
+		}
+		
+	}
+
+	.copyright {
+		flex-basis: 40%;
+		flex-grow: 1;
+		color: $color_gray;
+		font-size: 10px;
+		font-weight: 700;
+		text-align: right;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	@include desktop_small {
+
+		.footer {
+			flex-wrap: wrap;
+			padding: 15px 20px;
+		}
+
+		.menu {
+			flex-wrap: wrap;
+			flex-basis: auto;
+			width: 100%;
+			margin-top: -7px;
+			margin-bottom: 8px;
+
+			li {
+				margin: 7px 20px 7px 0;
+			}
+
+		}
+
+		.logo_wrapper {
+			margin-left: 0;
+			margin-right: 10px;
+		}
+
+		.copyright {
+			text-align: left;
+			flex-basis: auto;
+			font-size: 8px;
+			max-width: 200px;
+		}
+
+	}
+
+}

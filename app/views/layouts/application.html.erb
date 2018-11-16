@@ -5,18 +5,44 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-   <script async defer src="https://maps.google.com/maps/api/js?v=3.exp&sensor=false&libraries=places&key=AIzaSyDBuVk2k0TwWbW4wRj6YNlaYzLkEyd465U"></script>
-   <script src="https://js.stripe.com/v3/"></script>
+    <script async defer src="https://maps.google.com/maps/api/js?v=3.exp&sensor=false&libraries=places&key=AIzaSyDBuVk2k0TwWbW4wRj6YNlaYzLkEyd465U"></script>
+    <script src="https://js.stripe.com/v3/"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   </head>
 
   <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
+    <div id="site">
+      <div class="container_box">
+          <%# render 'layouts/navigation' %>
+          <%= render 'layouts/header' %>
+        <main role="main">
+           <%= render 'layouts/messages' %>
+           <%= yield %>
+        </main>
+      </div>
+
+      <%= render 'layouts/signup_modal' %>
+      <%= render 'layouts/login_modal' %>
+
+    </div>
+
+    <div class="svg_hidden">
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 10" id="ico_logo">
+        <path d="M13.63.259a2.37 2.37 0 0 0-2.371 2.37V7.37a2.37 2.37 0 0 0 4.741 0V2.63A2.37 2.37 0 0 0 13.63.259zM2.371 5a2.37 2.37 0 1 0-.002 4.74A2.37 2.37 0 0 0 2.371 5zm5.685-3.422A2.386 2.386 0 1 0 3.79 3.711l2.356 4.711A2.385 2.385 0 0 0 8.279 9.74c1.773 0 2.926-1.866 2.133-3.452l-2.356-4.71z"></path>
+      </svg>
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 12" id="ico_arrow_down">
+        <path d="M9.8 7.459a1.009 1.009 0 0 0-1.4-.197L6.001 9.038V.987A.994.994 0 0 0 5 0c-.551 0-1 .442-1 .987v8.052L1.6 7.262a1.005 1.005 0 0 0-1.4.196.979.979 0 0 0 .2 1.382l4 2.963c.042.031.09.046.135.069.038.02.072.043.113.058.108.04.219.064.333.066.007 0 .012.004.019.004.006 0 .01-.003.016-.003a1 1 0 0 0 .336-.067c.041-.015.076-.038.114-.058.045-.023.093-.038.134-.069l4-2.963a.978.978 0 0 0 .2-1.381z"></path>
+      </svg>
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 10" id="ico_arrow_right">
+        <path d="M15.929 5.354a.983.983 0 0 0 .07-.349L16 5l-.002-.009a.994.994 0 0 0-.069-.343c-.016-.041-.038-.075-.059-.113-.024-.045-.039-.093-.07-.135l-3.001-4A1 1 0 0 0 11.2 1.6L13 4H1a1 1 0 0 0 0 2.001h12l-1.8 2.4A.999.999 0 1 0 12.799 9.6L15.8 5.601c.031-.042.047-.091.071-.136.02-.038.042-.071.058-.111z"></path>
+      </svg>
+
+    </div>
   </body>
 </html>

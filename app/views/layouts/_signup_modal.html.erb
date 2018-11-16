@@ -1,0 +1,82 @@
+<div class="modal_box modal_form" id="modal_sign_up">
+
+	<form action="#" class="modal">
+
+		<div class="close"></div>
+
+		<div class="logo_wrapper">
+
+			<a class="logo" href="index.html">
+				<svg xmlns="http://www.w3.org/2000/svg">
+					<use xlink:href="#ico_logo"></use>
+				</svg>
+			</a>
+
+		</div>
+
+		<div class="title_box black">Sign Up</div>
+
+		<div class="text">
+
+			Do you have an account? <span data-modal="login">Log In</span>
+
+		</div>
+
+		<div class="items fields_large fields_uppercased">
+
+			<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { role: 'form' }) do |f| %>
+		    <div class="item_wide">
+		      <%# f.select :role_id, options_for_select(@roles),{}, {class: ''} %>
+	      </div>
+
+        <div class="item">
+          	<%= f.text_field :first_name, autofocus: true, placeholder: "First name" %>
+        </div>
+
+        <div class="item">
+          	<%= f.text_field :last_name, placeholder: "Last name" %>
+        </div>
+
+	      <div class="item">
+	        	<%= f.email_field :email, placeholder: "Email" %>
+	      </div>
+
+	      <div class="item">
+					<div class="field">
+						<input type="email" name="email_confirm" placeholder="Confirm email" />
+					</div>
+				</div>
+
+	      <div class="item">
+	        	<%= f.password_field :password, placeholder: "Password" %>
+	      </div>
+
+	      <div class="item">
+	        	<%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+	      </div>
+
+	      <div class="item_wide">
+	      	<%= f.submit "Continue", class: 'btn font_mini wide' %>
+	    	</div>
+	    <% end %>
+
+		</div>
+
+		<div class="terms">
+			By creating my account, I agree to the <a href="#">Terms &amp; conditions</a> and
+			<a href="#">Privacy Policy</a>
+		</div>
+
+	</form>
+
+</div>
+
+<script type="text/javascript">
+  $('#user_role_id').val(localStorage.getItem("role_type"));
+  $('#user_role_id').change(function(){
+    userType = $(this).val();
+    localStorage.setItem("role_type", userType)
+    $(this).val(localStorage.getItem("role_type"))
+    $("#user_type").val(localStorage.getItem("role_type"))
+  });
+</script>

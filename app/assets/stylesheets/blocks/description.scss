@@ -1,0 +1,165 @@
+.description_box {
+	display: block;
+	position: relative;
+	margin-bottom: 75px;
+
+	&.green {
+		color: $color_white;
+		background-color: $color_green;
+		padding: 116px 0 76px;
+
+		.title {
+			top: -17px;
+		}
+
+		.description {
+			align-items: flex-start;
+		}
+
+	}
+
+	.description {
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+	}
+
+	.title {
+		display: block;
+		position: relative;
+		font-size: 50px;
+		font-weight: 700;
+		padding-right: 20px;
+		width: 50%;
+		flex-grow: 0;
+		flex-shrink: 0;
+		line-height: 1.23;
+
+		&.large {
+			font-size: 70px;
+		}
+
+	}
+
+	.text {
+		display: block;
+		position: relative;
+		font-size: 30px;
+		line-height: 1.2;
+		top: -5px;
+	}
+
+	.image {
+		display: block;
+		position: relative;
+		overflow: hidden;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+
+	}
+
+	.btn {
+		margin-top: 73px;
+	}
+
+	@include desktop_small {
+		margin-bottom: 35px;
+
+		&.green {
+			padding: 40px 0 35px;
+		}
+
+		.title {
+			font-size: 40px;
+			box-sizing: border-box;
+
+			&.large {
+				top: -5px;
+				font-size: 50px;
+			}
+
+		}
+
+		.text {
+			width: 50%;
+			padding-left: 10px;
+			box-sizing: border-box;
+			font-size: 24px;
+		}
+
+		.btn {
+			margin-top: 35px;
+		}
+
+	}
+
+	@include tablet_large {
+
+		.description {
+			align-items: flex-start;
+		}
+
+		.title {
+			font-size: 30px;
+			margin-top: -8px;
+		}
+
+		.text {
+			font-size: 20px;
+		}
+
+	}
+
+	@include tablet_small {
+		margin-bottom: 15px;
+
+		&.green {
+			padding: 15px 0 10px;
+		}
+
+		.description {
+			display: block;
+			text-align: center;
+		}
+
+		.title {
+			width: auto;
+			padding: 0;
+			font-size: 20px;
+			margin: 0 0 13px;
+
+			&.large {
+				font-size: 24px;
+				top: 0;
+				margin-bottom: 12px;
+			}
+
+		}
+
+		.text {
+			width: auto;
+			font-size: 14px;
+			line-height: 1.25;
+			padding: 0;
+			top: 0;
+		}
+
+		.btn {
+			display: block;
+			width: auto;
+			margin-top: 15px;
+		}
+
+	}
+
+	@include phone_large {
+
+
+	}
+
+
+}

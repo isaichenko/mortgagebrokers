@@ -1,0 +1,123 @@
+.tickets_box {
+	display: block;
+	position: relative;
+	margin: 74px 0 42px;
+	text-align: center;
+
+	.title {
+		display: block;
+		margin-bottom: 30px;
+		color: $color_purple;
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 1.2;
+	}
+
+	.info {
+		display: inline-block;
+		vertical-align: middle;
+		width: 12px;
+		height: 16px;
+		background: url(../images/ico_info.svg) 0 0 no-repeat;
+		background-size: contain;
+		margin-left: 2px;
+		position: relative;
+		top: -1px;
+	}
+
+	.number {
+		display: block;
+		color: $color_black;
+		font-size: 160px;
+		font-weight: 700;
+		text-transform: uppercase;
+		margin-bottom: 35px;
+		line-height: 1;
+	}
+
+	.caption {
+		display: block;
+		color: $color_purple;
+		font-size: 20px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin-bottom: 25px;
+
+		span {
+			color: $color_green;
+		}
+
+	}
+
+	.slider {
+		margin-bottom: 27px;
+	}
+
+	.help {
+		display: block;
+		color: $color_gray;
+		font-size: 10px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		
+		&:before, &:after {
+			content: '';
+			display: inline-block;
+			position: relative;
+			width: 12px;
+			height: 12px;
+			background: url(../images/ico_arrow_left.svg) 0 0 no-repeat;
+			background-size: contain;
+			margin: 0 10px;
+			vertical-align: middle;
+			top: -1px;
+		}
+		
+		&:after {
+			background-image: url(../images/ico_arrow_right.svg);
+		}
+		
+	}
+
+	@include tablet_large {
+		margin: 35px 0 25px;
+
+		.title {
+			font-size: 20px;
+			margin-bottom: 18px;
+		}
+
+		.number {
+			font-size: 100px;
+			margin-bottom: 25px;
+		}
+
+		.caption {
+			font-size: 16px;
+		}
+
+	}
+
+	@include phone_large {
+		margin-bottom: 35px;
+
+		.title {
+			font-size: 16px;
+			margin-bottom: 14px
+		}
+
+		.number {
+			font-size: 80px;
+			margin-bottom: 16px;
+		}
+
+		.caption {
+			font-size: 14px;
+			margin-bottom: 20px;
+		}
+
+	}
+
+}

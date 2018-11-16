@@ -1,0 +1,181 @@
+.noUi-target,
+.noUi-target * {
+	-webkit-touch-callout: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-user-select: none;
+	-ms-touch-action: none;
+	touch-action: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.noUi-target {
+	position: relative;
+	direction: ltr;
+}
+
+.noUi-base,
+.noUi-connects {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 1;
+	box-sizing: border-box;
+}
+
+/* Wrapper for all connect elements.
+ */
+.noUi-connects {
+	overflow: hidden;
+	z-index: 0;
+}
+
+.noUi-connect,
+.noUi-origin {
+	will-change: transform;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	-ms-transform-origin: 0 0;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+
+/* Offset direction
+ */
+.noUi-horizontal .noUi-origin {
+	left: auto;
+	right: 0;
+}
+
+/* Give origins 0 height/width so they don't interfere with clicking the
+ * connect elements.
+ */
+.noUi-vertical .noUi-origin {
+	width: 0;
+}
+
+.noUi-horizontal .noUi-origin {
+	height: 0;
+}
+
+.noUi-handle {
+	position: absolute;
+}
+
+.noUi-state-tap .noUi-connect,
+.noUi-state-tap .noUi-origin {
+	-webkit-transition: transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.noUi-state-drag * {
+	cursor: inherit !important;
+}
+
+/* Slider size and handle placement;
+ */
+.noUi-horizontal {
+	height: 12px;
+	padding: 0 18px;
+}
+
+.noUi-horizontal .noUi-handle {
+	right: -19px;
+	top: -13px;
+}
+
+.noUi-vertical {
+	width: 18px;
+}
+
+.noUi-vertical .noUi-handle {
+	width: 28px;
+	height: 34px;
+	left: -6px;
+	top: -17px;
+}
+
+/* Styling;
+ * Giving the connect element a border radius causes issues with using transform: scale
+ */
+
+.noUi-target {
+	background: $color_purple;
+}
+
+.noUi-connects {
+
+}
+
+.noUi-connect {
+	background: $color_purple;
+}
+
+/* Handles and cursors;
+ */
+.noUi-draggable {
+	cursor: ew-resize;
+}
+
+.noUi-vertical .noUi-draggable {
+	cursor: ns-resize;
+}
+
+.noUi-handle {
+	position: absolute;
+	box-sizing: border-box;
+	background-color: $color_white;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	cursor: grab;
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 2px;
+		right: 2px;
+		top: 2px;
+		bottom: 2px;
+		border: 1px solid $color_green;
+		border-radius: 50%;
+		z-index: 1;
+		transition: 0.2s;
+	}
+
+	&:after {
+		content: '';
+		display: block;
+		width: 18px;
+		height: 18px;
+		border-radius: 50%;
+		background-color: $color_green;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -9px 0 0 -9px;
+		z-index: 2;
+		transition: 0.2s;
+	}
+
+}
+
+.noUi-active {
+
+	&:before {
+		border-color: $color_purple;
+	}
+
+	&:after {
+		background-color: $color_purple;
+	}
+
+}

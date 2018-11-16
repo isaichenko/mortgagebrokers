@@ -1,0 +1,145 @@
+.title_box {
+	display: block;
+	position: relative;
+	color: $color_purple;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 1.25;
+	min-height: 1.25em;
+	margin-bottom: 15px;
+
+	&.large {
+		font-size: 30px;
+	}
+
+	&.black {
+		color: $color_black;
+	}
+
+	&.green {
+		color: $color_green;
+	}
+
+	&.profile {
+		font-size: 30px;
+		padding-top: 1px;
+		margin-top: -4px;
+		margin-bottom: 11px;
+	}
+
+	.back {
+		display: none;
+		position: relative;
+		color: $color_gray;
+		font-size: 10px;
+		font-weight: 700;
+		line-height: 1.25;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin: 0 0 14px;
+		padding-top: 3px;
+		transition: 0.2s;
+
+		.arrow {
+			display: inline-block;
+			width: 14px;
+			height: 10px;
+			fill: $color_gray;
+			position: relative;
+			margin: 0 0 0 6px;
+			vertical-align: middle;
+			top: -1px;
+		}
+
+		.flipped {
+			transform: rotate(180deg);
+			margin: 0 6px 0 0;
+		}
+
+		&:hover {
+			color: $color_green;
+
+			.arrow {
+				fill: $color_green;
+			}
+
+		}
+
+	}
+
+	.caption {
+		display: block;
+		font-size: 10px;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: $color_gray;
+		letter-spacing: 1px;
+		margin: 10px 0 30px;
+
+		span {
+			color: $color_purple;
+		}
+
+	}
+
+	h1 {
+		display: block;
+		margin: 0;
+		font-size: inherit;
+		font-weight: inherit;
+	}
+
+
+	@include desktop_small {
+
+		&.shifted {
+			margin-top: 37px;
+			margin-bottom: 10px;
+		}
+
+		&.profile {
+			font-size: 24px;
+			padding-top: 11px;
+			margin-bottom: 9px;
+		}
+
+		&.large {
+			font-size: 24px;
+		}
+
+		.caption {
+			margin: 2px 0 8px;
+		}
+
+	}
+
+	@include tablet_small {
+		font-size: 20px;
+		margin-bottom: 8px;
+
+		&.shifted {
+			font-size: 24px;
+			margin-top: 16px;
+			margin-bottom: 5px;
+		}
+
+		&.profile {
+			padding-top: 4px;
+			margin-bottom: 5px;
+		}
+
+		&.large {
+			font-size: 20px;
+		}
+
+		.back {
+			display: block;
+		}
+
+		&:empty {
+			display: none;
+		}
+
+	}
+
+}

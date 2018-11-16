@@ -1,0 +1,229 @@
+.borrowers_box {
+	display: block;
+	position: relative;
+	padding: 50px 0 25px;
+	color: $color_black;
+	background-color: #e7e7e8;
+
+	.header_box + & {
+		margin-top: -36px;
+	}
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 1;
+		background: url(../images/bg_borrowers.jpg) 50% 0 no-repeat;
+		background-size: cover;
+	}
+
+	.fixed {
+		z-index: 2;
+	}
+
+	.intro {
+		display: block;
+		position: relative;
+		margin: 94px 0 130px;
+		max-width: 800px;
+
+		.title {
+			display: block;
+			font-size: 80px;
+			font-weight: 800;
+			line-height: 96px;
+			margin-bottom: 60px;
+		}
+
+		.items {
+			display: flex;
+			align-items: flex-start;
+			flex-wrap: wrap;
+			margin-bottom: 73px;
+		}
+
+		.item {
+			display: block;
+			position: relative;
+			padding-left: 26px;
+			margin-right: 40px;
+			font-size: 20px;
+			font-weight: 700;
+
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 2px;
+				width: 17px;
+				height: 17px;
+				background: url(../images/ico_checked.svg) 0 0 no-repeat;
+			}
+
+		}
+
+		.buttons {
+			display: flex;
+			align-items: center;
+		}
+
+		.btn {
+			margin-right: 40px;
+		}
+
+	}
+
+	@include desktop_small {
+		padding: 25px 0 0;
+
+		&:before {
+			height: 547px;
+			background-image: url(../images/bg_borrowers_tablet.png);
+		}
+
+		.intro {
+			margin: 20px 0;
+
+			.title {
+				font-size: 50px;
+				line-height: 61px;
+				max-width: 560px;
+				margin-bottom: 30px;
+			}
+
+			.items {
+				max-width: 358px;
+				margin: 0 -20px 6px;
+			}
+
+			.item {
+				box-sizing: border-box;
+				width: 50%;
+				padding: 0 20px 0 46px;
+				font-size: 16px;
+				line-height: 1.2;
+				margin: 0 0 30px;
+
+				&:before {
+					left: 20px;
+					top: -1px;
+				}
+
+			}
+
+			.btn {
+				margin-right: 20px;
+			}
+
+		}
+
+	}
+
+	@include tablet_large {
+
+		.header_box + & {
+			margin-top: -30px;
+		}
+
+	}
+
+	@include tablet_small {
+
+		&:before {
+			bottom: auto;
+			height: 380px;
+			background-image: url(../images/bg_borrowers_mobile.png);
+		}
+
+		.header_box + & {
+			margin-top: -15px;
+		}
+
+		.intro {
+			margin: 0;
+
+			.title {
+				font-size: 30px;
+				line-height: 35px;
+				max-width: 300px;
+				margin-bottom: 25px;
+			}
+
+			.items {
+				display: block;
+				margin: 0 0 35px;
+				max-width: none;
+			}
+
+			.item {
+				display: block;
+				padding: 0 0 0 26px;
+				margin: 0 0 17px;
+				width: auto;
+
+				&:before {
+					left: 0;
+				}
+
+				br {
+					display: none;
+				}
+
+			}
+
+			.buttons {
+				margin: 0 -5px;
+			}
+
+			.btn {
+				width: calc(50% - 10px);
+				margin: 0 5px;
+				box-sizing: border-box;
+			}
+
+		}
+
+	}
+
+	@include phone_large {
+		margin-bottom: 10px;
+	}
+
+	@include phone_small {
+		padding: 30px 0;
+
+		.intro {
+
+			.title {
+				margin-bottom: 27px;
+			}
+
+			.items {
+				margin-bottom: 14px;
+			}
+
+			.item {
+				margin-bottom: 16px;
+			}
+
+			.buttons {
+				display: block;
+				margin: 0 0 -10px;
+			}
+
+			.btn {
+				width: 100%;
+				margin: 0 0 10px;
+			}
+
+		}
+
+	}
+
+}

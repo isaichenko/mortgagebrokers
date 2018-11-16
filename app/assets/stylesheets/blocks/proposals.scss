@@ -1,0 +1,283 @@
+.proposals_box {
+	display: block;
+	position: relative;
+	margin: 0 -20px;
+
+	.items {
+		display: block;
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+		white-space: nowrap;
+		font-size: 0;
+		line-height: 0;
+	}
+
+	.item {
+		display: inline-block;
+		width: 25%;
+		vertical-align: top;
+		position: relative;
+		font-size: 16px;
+		line-height: 1.3;
+		white-space: normal;
+	}
+
+	.card {
+		display: block;
+		position: relative;
+		margin: 25px 20px;
+		padding: 20px 20px;
+		background-color: $color_white;
+		transition: 0.3s;
+		top: 0;
+
+		&:hover {
+			box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+			top: -10px;
+		}
+
+	}
+
+	.title {
+		display: block;
+		color: $color_black;
+		font-size: 24px;
+		font-weight: 700;
+		margin: -6px 0 23px;
+		max-width: 150px;
+		line-height: 1.25;
+	}
+
+	.label {
+		display: inline-block;
+		position: relative;
+		left: -30px;
+		background-color: $color_purple;
+		color: $color_white;
+		font-size: 10px;
+		font-weight: 700;
+		line-height: 13px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin-bottom: 8px;
+		padding: 4px 10px;
+
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 100%;
+			width: 0;
+			border-right: 10px solid rgba($color_black, 0.3);
+			border-bottom: 10px solid transparent;
+		}
+
+	}
+
+	.number {
+		display: flex;
+		margin-bottom: 14px;
+	}
+
+	.value {
+		display: block;
+		color: $color_black;
+		font-size: 80px;
+		font-weight: 300;
+		line-height: 1;
+		letter-spacing: -1px;
+	}
+
+	.unit {
+		display: block;
+		position: relative;
+		margin-left: 1px;
+
+		.top {
+			display: block;
+			position: relative;
+			font-size: 47px;
+			font-weight: 300;
+			line-height: 1;
+			top: 1px;
+		}
+
+		.bottom {
+			display: block;
+			position: absolute;
+			font-size: 10px;
+			font-weight: 700;
+			line-height: 1;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			max-width: 30px;
+			left: 5px;
+			bottom: 10px;
+		}
+
+	}
+
+	.users {
+		display: flex;
+		align-items: center;
+		margin-bottom: 28px;
+	}
+
+	.photos {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: flex-end;
+		margin-right: 30px;
+	}
+
+	.photo {
+		display: block;
+		width: 40px;
+		height: 40px;
+		position: relative;
+		margin-right: -10px;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			border: 1px solid $color_white;
+			border-radius: 50%;
+			filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
+		}
+
+	}
+
+	.caption {
+		display: block;
+		color: $color_purple;
+		font-size: 12px;
+		font-weight: 500;
+		position: relative;
+		top: 5px;
+	}
+
+	.btn {
+		width: 100%;
+	}
+
+	@include desktop_small {
+		margin: 0 -10px;
+
+		.sliderized {
+			overflow: visible;
+
+			.flickity-viewport {
+				overflow: visible;
+			}
+
+			.item {
+				width: 290px;
+			}
+
+		}
+
+		.item {
+			width: 33.33%;
+		}
+
+		.users {
+			margin-bottom: 34px;
+		}
+
+		.card {
+			margin: 20px 10px;
+		}
+
+	}
+
+	@include media(768) {
+
+		.title {
+			font-size: 16px;
+			margin-bottom: 15px;
+			max-width: none;
+			min-height: 2.5em;
+		}
+
+		.label {
+			left: -20px;
+			margin-bottom: 0;
+
+			&:after {
+				display: none;
+			}
+
+		}
+
+		.number {
+			margin-bottom: 12px;
+		}
+
+		.value {
+			font-size: 60px;
+		}
+
+		.unit {
+
+			.top {
+				top: 3px;
+				font-size: 32px;
+			}
+
+			.bottom {
+				left: 3px;
+				bottom: 7px;
+			}
+
+		}
+
+		.users {
+			display: block;
+			position: relative;
+			margin-bottom: 17px;
+		}
+
+		.caption {
+			top: 0;
+		}
+
+		.photos {
+			margin-bottom: 16px;
+			margin-right: 0;
+		}
+
+	}
+
+	@include tablet_small {
+		margin: 0 -5px;
+
+		.sliderized {
+
+			.item {
+				width: 190px;
+			}
+
+		}
+
+		.item {
+			width: 50%;
+		}
+
+		.card {
+			margin: 20px 5px 10px;
+		}
+
+	}
+
+	@include phone_small {
+
+		.item {
+			// width: 100%;
+		}
+
+	}
+
+}

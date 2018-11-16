@@ -1,0 +1,1032 @@
+.plans_box {
+	display: block;
+	position: relative;
+	padding-top: 1px;
+	margin-bottom: 40px;
+
+	&.card_selected {
+
+		.heading {
+
+			.visible {
+				position: absolute;
+				left: 600px;
+				opacity: 0;
+			}
+
+			.hidden {
+				position: relative;
+				left: 0;
+				opacity: 1;
+			}
+
+			.back {
+				height: 12px;
+				opacity: 1;
+			}
+
+			.payments {
+				height: 38px;
+				opacity: 1;
+			}
+
+		}
+
+		.plan_basic {
+
+			.card_visible {
+				left: 25%;
+				filter: blur(3px);
+			}
+
+		}
+
+		.plan_featured {
+
+			.card_visible {
+				transform: rotateY(180deg);
+			}
+
+			.card_hidden {
+				transform: rotateY(360deg) scale(1);
+				left: -50%;
+			}
+
+		}
+
+	}
+
+	.fixed {
+		display: block;
+		position: relative;
+		max-width: 1240px;
+	}
+
+	.heading {
+		display: block;
+		max-width: 570px;
+		text-align: left;
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+
+		.visible, .hidden {
+			display: block;
+			position: relative;
+			left: 0;
+			top: 0;
+			transition: 1s;
+			width: 100%;
+			opacity: 1;
+		}
+
+		.hidden {
+			position: absolute;
+			left: -600px;
+			opacity: 0;
+		}
+
+		.back {
+			display: block;
+			position: relative;
+			overflow: hidden;
+			color: $color_gray;
+			font-size: 10px;
+			font-weight: 700;
+			line-height: 12px;
+			width: 100px;
+			height: 0;
+			opacity: 0;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin: -3px 0 12px;
+			text-align: left;
+			cursor: pointer;
+			transition: 0.5s;
+
+			.arrow {
+				display: inline-block;
+				width: 14px;
+				height: 10px;
+				fill: $color_gray;
+				position: relative;
+				margin-right: 4px;
+				transform: rotate(180deg);
+				vertical-align: middle;
+				top: -1px;
+			}
+
+			&:hover {
+				color: $color_green;
+
+				.arrow {
+					fill: $color_green;
+				}
+
+			}
+
+		}
+
+		.title {
+			display: block;
+			position: relative;
+			color: $color_purple;
+			font-size: 30px;
+			font-weight: 700;
+			line-height: 1.25;
+			margin: 10px 0 53px;
+			text-align: center;
+		}
+
+		.payments, .images {
+			display: block;
+			position: relative;
+			text-align: center;
+		}
+
+		.payments {
+			top: -22px;
+			overflow: hidden;
+			height: 0;
+			opacity: 0;
+			transition: 0.5s;
+		}
+
+		.label {
+			display: block;
+			color: $color_gray;
+			font-size: 10px;
+			font-weight: 700;
+			text-transform: uppercase;
+			line-height: 1.2;
+			margin-bottom: 6px;
+			letter-spacing: 1px;
+		}
+
+		.images {
+
+			img {
+				display: block;
+				width: auto;
+				height: auto;
+				margin: 0 auto;
+			}
+
+		}
+
+	}
+
+	.plans {
+		display: block;
+		position: relative;
+		width: 100%;
+		white-space: nowrap;
+		font-size: 0;
+		line-height: 0;
+		transition: 0.5s;
+	}
+
+	.plan {
+		display: inline-block;
+		box-sizing: border-box;
+		width: 50%;
+		position: relative;
+		vertical-align: top;
+		white-space: normal;
+		font-size: 16px;
+		line-height: 1.25;
+		transition: 1s;
+	}
+
+	.plan_basic {
+		margin-top: 40px;
+	}
+
+	.plan_featured {
+		perspective: 2000px;
+
+		.price {
+			font-size: 50px;
+			letter-spacing: 2px;
+			color: $color_green;
+
+			span {
+				margin-left: -12px;
+			}
+
+		}
+
+		.name {
+			margin-top: -6px;
+			margin-bottom: 7px;
+		}
+
+		.text {
+			margin-bottom: 35px;
+		}
+
+		.list {
+
+			.icon {
+				fill: $color_green;
+			}
+
+		}
+
+		.card_visible, .card_hidden {
+			border: 5px solid $color_green;
+		}
+
+	}
+
+	.card_visible {
+		display: block;
+		position: relative;
+		background-color: $color_white;
+		color: $color_black;
+		padding: 40px;
+		left: 0;
+		backface-visibility: hidden;
+		transition: 1s;
+	}
+
+	.card_hidden {
+		display: block;
+		position: absolute;
+		width: 100%;
+		top: 0;
+		transition: 0.5s;
+		transform: rotateY(180deg) scale(0);
+		border: 5px solid $color_green;
+		backface-visibility: hidden;
+		box-sizing: border-box;
+		background-color: $color_white;
+		padding: 40px;
+	}
+
+	.name {
+		display: block;
+		font-size: 20px;
+		font-weight: 800;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin-top: -5px;
+		margin-bottom: 5px;
+	}
+
+	.price {
+		display: block;
+		color: $color_purple;
+		font-size: 40px;
+		font-weight: 700;
+		line-height: 50px;
+		text-transform: uppercase;
+		letter-spacing: 3.6px;
+		margin-bottom: 18px;
+
+		span {
+			color: $color_gray;
+			font-size: 20px;
+			font-weight: 400;
+			text-transform: none;
+			letter-spacing: 0;
+			margin-left: -10px;
+		}
+
+	}
+
+	.text {
+		display: block;
+		margin-bottom: 33px;
+		font-size: 20px;
+		line-height: 1.2;
+	}
+
+	.list {
+		display: block;
+		position: relative;
+		margin-bottom: 35px;
+
+		li {
+			display: block;
+			position: relative;
+			padding-left: 22px;
+			margin-bottom: 20px;
+		}
+
+		.icon {
+			display: block;
+			position: absolute;
+			width: 17px;
+			height: 17px;
+			margin-right: 2px;
+			font-size: 0;
+			line-height: 0;
+			fill: $color_purple;
+			top: 1px;
+			left: -4px;
+		}
+
+	}
+
+	.button {
+		display: flex;
+		width: 100%;
+		box-sizing: border-box;
+		height: 60px;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		color: $color_white;
+		background-color: $color_purple;
+		transition: 0.2s;
+		font-size: 16px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		cursor: pointer;
+
+		&:hover {
+			background-color: $color_black;
+		}
+
+		&.green {
+			background-color: $color_green;
+
+			&:hover {
+				background-color: darken($color_green, 20%);
+			}
+
+		}
+
+	}
+
+	.welcome {
+		display: block;
+		color: $color_green;
+		font-size: 20px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin-bottom: 9px;
+		margin-top: -7px;
+	}
+
+	.message {
+		display: block;
+		font-size: 20px;
+		font-weight: 400;
+		margin-bottom: 32px;
+	}
+
+	.items {
+		display: block;
+		position: relative;
+	}
+
+	.item {
+		margin-bottom: 37px;
+		box-sizing: border-box;
+
+		label {
+			display: block;
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 1.25;
+			margin-bottom: 6px;
+		}
+
+	}
+
+	.field {
+		display: block;
+		position: relative;
+
+		&.field_complete {
+
+			.status {
+				color: $color_green;
+
+				&:after {
+					display: inline-block;
+				}
+
+			}
+
+			input {
+				color: $color_green;
+			}
+
+		}
+
+		&.field_error {
+
+			.status {
+				color: $color_red;
+
+				&:after {
+					display: inline-block;
+					background-image: url(../images/ico_close.svg);
+				}
+
+			}
+
+			input {
+				color: $color_red;
+			}
+
+		}
+
+		.btn, .icon, .status {
+			z-index: 2;
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.icon {
+			width: 16px;
+			height: 16px;
+			fill: $color_gray;
+		}
+
+		.status {
+			font-size: 10px;
+			font-weight: 700;
+			line-height: 12px;
+			text-transform: uppercase;
+			letter-spacing: 1.4px;
+
+			&:after {
+				content: '';
+				display: none;
+				vertical-align: middle;
+				width: 24px;
+				height: 24px;
+				background: url(../images/ico_complete.svg) 0 0 no-repeat;
+				background-size: contain;
+				margin-left: 9px;
+			}
+
+		}
+
+	}
+
+	.fields_large {
+
+		.jq-selectbox__trigger-arrow {
+			right: 10px;
+		}
+
+		.jq-selectbox li {
+			padding-top: 7px;
+			padding-bottom: 7px;
+		}
+
+	}
+
+	.row {
+		display: flex;
+		align-items: flex-end;
+		margin: 0 -10px;
+
+		.item {
+			padding: 0 10px;
+		}
+
+		.small {
+			width: 165px;
+		}
+
+		.micro {
+			width: 122px;
+			margin-left: auto;
+		}
+
+
+	}
+
+	.totals {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		margin-bottom: 13px;
+
+		.total {
+			display: block;
+			position: relative;
+			text-align: left;
+		}
+
+		.caption {
+			display: block;
+			color: $color_purple;
+			font-size: 14px;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			margin-bottom: 4px;
+		}
+
+		.number {
+			display: block;
+			color: $color_purple;
+			font-size: 50px;
+			font-weight: 700;
+			text-transform: uppercase;
+			line-height: 1;
+			margin-bottom: 4px;
+		}
+
+		.description {
+			display: block;
+			color: $color_gray;
+			font-size: 16px;
+			font-weight: 400;
+		}
+
+	}
+
+	.secured {
+		display: flex;
+		align-items: center;
+		color: $color_gray;
+		font-size: 12px;
+		font-weight: 500;
+
+		svg {
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			fill: $color_gray;
+			margin-right: 5px;
+		}
+
+		img {
+			display: block;
+			width: auto;
+			height: auto;
+			margin-left: 8px;
+		}
+
+	}
+
+	.terms {
+		display: block;
+		text-align: center;
+		margin-top: 8px;
+		margin-bottom: -3px;
+		color: $color_gray;
+		font-size: 12px;
+		font-weight: 500;
+
+		a {
+			color: $color_gray;
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+
+		}
+
+	}
+
+	.btn.wide {
+		letter-spacing: 2px;
+	}
+
+	@include desktop_small {
+		margin-bottom: 20px;
+
+		&.card_selected {
+
+			.heading {
+
+				.payments {
+					margin-bottom: 26px;
+				}
+
+			}
+
+		}
+
+		.heading {
+			overflow: visible;
+			max-width: 50%;
+
+			.back {
+				margin: -2px 0 10px 2px;
+			}
+
+			.title {
+				font-size: 24px;
+				margin: 14px -20px 16px;
+			}
+
+			.payments {
+				top: 6px;
+				margin-bottom: 0;
+			}
+
+		}
+
+		.fixed {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
+		.plan_featured {
+
+			.price {
+				font-size: 40px;
+				letter-spacing: 0;
+				margin-left: -2px;
+
+				span {
+					margin-left: -8px;
+				}
+
+			}
+
+			.name {
+				margin: -4px 0 10px;
+			}
+
+			.text {
+				margin-bottom: 15px;
+			}
+
+		}
+
+		.card_visible {
+			padding: 20px;
+		}
+
+		.card_hidden {
+			padding: 20px;
+		}
+
+		.name {
+			font-size: 16px;
+			margin: -3px 0 7px;
+			letter-spacing: 1.6px;
+		}
+
+		.price {
+			font-size: 30px;
+			letter-spacing: 3.2px;
+			line-height: 40px;
+			margin-bottom: 2px;
+
+			span {
+				font-size: 16px;
+				margin-left: -7px;
+			}
+
+		}
+
+		.text {
+			font-size: 16px;
+			margin-bottom: 16px;
+			margin-right: -5px;
+		}
+
+		.list {
+			margin-bottom: 20px;
+
+			li {
+				font-size: 14px;
+				line-height: 15px;
+				margin-bottom: 15px;
+				padding-left: 27px;
+			}
+
+			.icon {
+				left: 1px;
+			}
+
+		}
+
+		.welcome {
+			font-size: 16px;
+			margin: -5px 0 12px;
+			letter-spacing: 1.6px;
+		}
+
+		.message {
+			font-size: 16px;
+			margin-bottom: 21px;
+			max-width: 300px;
+		}
+
+		.items {
+			padding-bottom: 1px;
+			margin-bottom: -4px;
+		}
+
+		.item {
+			margin-bottom: 27px;
+
+			input {
+				padding-top: 7px;
+				padding-bottom: 7px;
+			}
+
+
+		}
+
+		.row {
+			flex-wrap: wrap;
+
+			.item {
+				width: 50%;
+				margin-left: 0;
+			}
+
+		}
+
+		.totals {
+			margin-bottom: 25px;
+
+			.caption {
+				margin-bottom: 0;
+			}
+
+			.number {
+				font-size: 40px;
+				margin-bottom: 2px;
+			}
+
+			.description {
+				font-size: 14px;
+			}
+
+		}
+
+		.secured {
+			text-align: center;
+			width: 75px;
+			flex-direction: column;
+
+			svg {
+				margin: 0 auto 5px;
+			}
+
+			img {
+				margin: 0 auto;
+			}
+
+		}
+
+		.fields_large .jq-selectbox__select-text, .fields_large .jq-selectbox li {
+			padding-top: 7px;
+			padding-bottom: 7px;
+		}
+
+		.button.green {
+			font-size: 20px;
+			letter-spacing: 2.4px;
+		}
+
+	}
+
+	@include tablet_small {
+
+		.fixed {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		&.card_selected {
+
+			.heading {
+
+				.payments {
+					margin-bottom: 11px;
+				}
+
+			}
+
+		}
+
+		.heading {
+			max-width: none;
+			margin: 0;
+
+			.back {
+				margin-bottom: 1px;
+			}
+
+			.title {
+				font-size: 20px;
+				line-height: 24px;
+				margin: 0 0 14px;
+			}
+
+			.title_small {
+				font-size: 16px;
+				line-height: 24px;
+			}
+
+			.payments {
+				top: -10px;
+				left: -3px;
+			}
+
+		}
+
+		.plan_basic {
+			margin-top: 20px;
+		}
+
+		.plan_featured {
+
+			.price {
+				display: flex;
+				align-items: baseline;
+				font-size: 30px;
+				letter-spacing: 0;
+				margin-left: -2px;
+				margin-bottom: 14px;
+
+				span {
+					margin-left: 7px;
+					line-height: 1.2;
+				}
+
+			}
+
+			.name {
+				margin: 6px 0 1px;
+			}
+
+			.text {
+				margin-bottom: 17px;
+			}
+
+		}
+
+		.card_visible {
+			padding: 10px;
+		}
+
+		.card_hidden {
+			padding: 10px;
+		}
+
+		.name {
+			font-size: 14px;
+			margin: 6px 0 0;
+			letter-spacing: 1.3px;
+		}
+
+		.price {
+			font-size: 24px;
+			letter-spacing: 2.2px;
+			line-height: 30px;
+			margin-bottom: 7px;
+
+			span {
+				font-size: 14px;
+				margin-left: -2px;
+			}
+
+		}
+
+		.text {
+			font-size: 14px;
+			margin-bottom: 17px;
+			margin-right: -5px;
+		}
+
+		.list {
+			margin-bottom: 21px;
+
+			li {
+				font-size: 12px;
+			}
+
+		}
+
+		.welcome {
+			font-size: 14px;
+			margin: 5px 0 14px;
+			letter-spacing: 1.4px;
+		}
+
+		.message {
+			font-size: 14px;
+			margin-bottom: 12px;
+		}
+
+		.items {
+			margin-bottom: -15px;
+		}
+
+		.item {
+			margin-bottom: 27px;
+		}
+
+		.row {
+			margin: 0 -5px;
+
+			.item {
+				padding: 0 5px;
+			}
+
+		}
+
+		.totals {
+			margin-bottom: 15px;
+
+			.total {
+				top: -3px;
+				left: -2px;
+			}
+
+			.caption {
+				margin-bottom: 0;
+			}
+
+			.number {
+				font-size: 30px;
+				margin-bottom: 2px;
+			}
+
+
+		}
+
+		.secured {
+			text-align: center;
+			width: 75px;
+			flex-direction: column;
+
+			svg {
+				margin: 0 auto 5px;
+			}
+
+			img {
+				margin-top: 3px;
+				width: 47px;
+			}
+
+		}
+
+		.button {
+			height: 40px;
+			font-size: 14px;
+			letter-spacing: 1.7px;
+
+			&.green {
+				font-size: 16px;
+				letter-spacing: 2px;
+			}
+
+		}
+
+	}
+
+	@include media(560) {
+
+		&.card_selected {
+
+			.plan_basic {
+
+				.card_visible {
+					left: 0;
+				}
+
+			}
+
+			.plan_featured {
+				perspective: none;
+
+				.card_hidden {
+					width: 260px;
+					left: 50%;
+					margin-left: -130px;
+				}
+
+			}
+
+		}
+
+		.plan {
+			position: static;
+			width: 260px;
+		}
+
+	}
+
+	@include phone_large {
+
+		.fixed {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+	}
+
+}

@@ -1,0 +1,274 @@
+.order_box {
+	display: block;
+	position: relative;
+	margin-bottom: 40px;
+
+	.promo {
+		display: block;
+		position: relative;
+		margin-bottom: 20px;
+
+		.field {
+			display: block;
+			position: relative;
+			max-width: 230px;
+		}
+
+		.btn {
+			width: auto;
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		label {
+			display: block;
+			color: $color_black;
+			font-size: 14px;
+			font-weight: 700;
+			margin-bottom: 5px;
+		}
+
+		input[type="text"] {
+			padding-right: 70px;
+		}
+
+	}
+
+	.totals {
+		display: flex;
+		position: relative;
+		border: 1px solid $color_light_gray;
+		margin-bottom: 20px;
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 50%;
+			top: 20px;
+			bottom: 20px;
+			width: 1px;
+			background-color: $color_light_gray;
+			margin-left: -2px;
+		}
+
+		.half {
+			display: block;
+			width: 50%;
+			box-sizing: border-box;
+			padding: 18px 20px;
+			text-align: center;
+		}
+
+		.title {
+			display: block;
+			color: $color_black;
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 28px;
+			text-transform: uppercase;
+			letter-spacing: 1.5px;
+			margin-bottom: 5px;
+		}
+
+		.number {
+			display: block;
+			color: $color_black;
+			font-size: 40px;
+			font-weight: 700;
+			line-height: 1;
+			text-transform: uppercase;
+			margin-bottom: 5px;
+		}
+
+		.caption {
+			display: block;
+			color: $color_black;
+			font-size: 10px;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+
+			span {
+				display: block;
+				color: $color_green;
+			}
+
+		}
+
+	}
+
+	.payment {
+		display: flex;
+		position: relative;
+		border: 1px solid $color_light_gray;
+		background-color: $color_background;
+		padding: 20px 0 15px;
+		margin-bottom: 20px;
+
+		.card {
+			display: flex;
+			position: relative;
+			flex-grow: 1;
+			border-right: 1px solid $color_light_gray;
+			padding: 0 20px;
+		}
+
+		.icon {
+			display: block;
+			flex-grow: 0;
+			flex-shrink: 0;
+			width: 32px;
+			height: 20px;
+			background: url(../images/ico_visa.png) 0 0 no-repeat;
+			margin-right: 10px;
+		}
+
+		.details {
+			display: block;
+			color: $color_black;
+			font-size: 14px;
+			font-weight: 600;
+			line-height: 1.5;
+			letter-spacing: 1.3px;
+		}
+
+		.edit {
+			display: inline-block;
+			color: $color_gray;
+			font-size: 10px;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			transition: 0.2s;
+			cursor: pointer;
+
+			&:hover {
+				color: $color_green;
+			}
+
+		}
+
+		p {
+			display: block;
+			margin-bottom: 7px;
+		}
+
+		.secure {
+			display: block;
+			position: relative;
+			padding: 10px 36px;
+			max-width: 80px;
+			text-align: center;
+		}
+
+		.label {
+			display: block;
+			position: relative;
+			padding: 22px 0 0;
+			margin-bottom: 8px;
+			color: #8a8c8e;
+			font-size: 10px;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 50%;
+				margin-left: -8px;
+				width: 16px;
+				height: 16px;
+				background: url(../images/ico_secure.svg) 0 0 no-repeat;
+				background-size: contain;
+			}
+
+		}
+
+		.provider {
+			display: block;
+			width: 60px;
+			height: 25px;
+			margin: 0 auto;
+			background: url(../images/ico_stripe.svg) 0 0 no-repeat;
+			background-size: contain;
+		}
+
+	}
+
+	.terms {
+		display: block;
+		color: #8a8c8e;
+		font-size: 12px;
+		font-weight: 500;
+		margin-top: 17px;
+		text-align: center;
+
+		a {
+			display: inline;
+			text-decoration: underline;
+			color: inherit;
+
+			&:hover {
+				text-decoration: none;
+			}
+
+		}
+
+	}
+
+	@include tablet_large {
+		margin-bottom: 20px;
+
+		.payment {
+
+			.secure {
+				padding: 10px 15px;
+			}
+
+		}
+
+	}
+
+	@include phone_large {
+		margin-bottom: 15px;
+
+		.promo {
+			margin-bottom: 10px;
+
+			.field {
+				max-width: none;
+			}
+
+		}
+
+		.totals {
+			margin-bottom: 10px;
+
+			.number {
+				font-size: 30px;
+			}
+
+		}
+
+		.payment {
+			margin-bottom: 10px;
+
+			p {
+				margin-bottom: 4px;
+			}
+
+		}
+
+		.terms {
+			margin-top: 10px;
+		}
+
+	}
+
+}

@@ -1,0 +1,153 @@
+.user_box {
+	display: block;
+	position: relative;
+
+	.photo {
+		display: block;
+		position: relative;
+		height: 0;
+		padding-bottom: 100%;
+		margin-bottom: 20px;
+		background-color: $color_purple;
+		color: $color_white;
+	}
+
+	.placeholder, img {
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		height: auto;
+		z-index: 1;
+	}
+
+	.placeholder {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 60px;
+		font-weight: 700;
+		text-transform: uppercase;
+		line-height: 1;
+		letter-spacing: 1.5px;
+	}
+
+	.upload {
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 2;
+		background: linear-gradient(to bottom, transparent, rgba($color_black, 0.3));
+
+		label {
+			display: block;
+			line-height: 20px;
+			padding: 5px 10px;
+			position: relative;
+			font-size: 10px;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			text-align: center;
+			color: inherit;
+			cursor: pointer;
+			transition: 0.2s;
+
+			&:hover {
+				opacity: 0.8;
+			}
+
+			&:before {
+				content: '';
+				display: inline-block;
+				width: 16px;
+				height: 11px;
+				background: url(../images/ico_photo.svg) 0 0 no-repeat;
+				background-size: contain;
+				vertical-align: middle;
+				position: relative;
+				margin-right: 9px;
+				top: -1px;
+			}
+
+		}
+
+		input[type="file"] {
+			position: absolute;
+			left: -1000px;
+			visibility: hidden;
+		}
+
+	}
+
+	.btn {
+		width: 100%;
+		font-size: 12px;
+		margin-bottom: 20px;
+	}
+
+	@include desktop_small {
+
+		.placeholder {
+			letter-spacing: 4px;
+		}
+
+		.upload {
+
+			label {
+				padding: 3px 10px;
+
+				&:before {
+					top: 0;
+					display: block;
+					margin: 0 auto 4px;
+				}
+
+			}
+
+		}
+
+	}
+
+	@include tablet_small {
+		margin-bottom: -10px;
+
+		.photo {
+			margin-bottom: 10px;
+		}
+
+		.upload {
+
+			label {
+				padding: 5px 10px;
+
+				&:before {
+					display: inline-block;
+					margin: 0 10px 0 8px;
+					top: -2px;
+				}
+
+			}
+
+		}
+
+		.buttons {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.btn {
+			display: inline-block;
+			width: auto;
+			padding-left: 10px;
+			padding-right: 10px;
+			margin: 0;
+		}
+
+	}
+
+}

@@ -1,0 +1,177 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	min-width: 320px;
+	font-family: $font_main;
+	font-size: 16px;
+	line-height: 1.3;
+	color: $color_main;
+}
+
+ol, ul {
+	list-style-position: inside;
+}
+
+a {
+	color: $color_main;
+	text-decoration: none;
+	transition: 0.2s;
+
+	&:hover {
+		color: $color_green;
+		text-decoration: none;
+	}
+
+}
+
+#site {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	overflow: hidden;
+	min-height: 100%;
+}
+
+.container_box {
+	display: block;
+	flex-grow: 1;
+	flex-shrink: 0;
+	position: relative;
+	width: 100%;
+	z-index: 2;
+	background-color: $color_background;
+
+	&.white {
+		background-color: $color_white;
+	}
+
+}
+
+.wrapper_box {
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: nowrap;
+
+	&.sidebar_pinned {
+
+		.widget_box {
+			position: fixed;
+			width: 270px;
+
+			@include desktop_small {
+				width: 260px;
+			}
+
+			@include tablet_small {
+				position: relative;
+				width: auto;
+			}
+
+		}
+
+		.small {
+
+			.widget_box {
+
+				@include desktop_small {
+					width: 176px;
+				}
+
+				@include tablet_small {
+					width: auto;
+				}
+
+			}
+
+		}
+
+	}
+
+	@include tablet_small {
+		flex-wrap: wrap;
+		justify-content: center;
+
+		.main_box {
+			width: 100%;
+			order: 2;
+		}
+
+	}
+
+}
+
+.main_box {
+	display: block;
+	flex-grow: 1;
+	position: relative;
+	order: 2;
+}
+
+.sidebar_box {
+	display: block;
+	flex-shrink: 0;
+	width: 270px;
+	margin-right: 40px;
+	order: 1;
+
+	@include desktop_small {
+		width: 260px;
+		margin-right: 20px;
+
+		&.small {
+			width: 176px;
+		}
+
+	}
+
+	@include tablet_small {
+		margin-right: 0;
+		width: 100%;
+		order: 1;
+
+		&.small {
+			width: 100%;
+		}
+	}
+
+}
+
+.footer_box {
+	display: block;
+	flex-grow: 0;
+	flex-shrink: 0;
+	position: relative;
+	z-index: 1;
+}
+
+.fixed {
+	position: relative;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 40px;
+	z-index: 1;
+	box-sizing: border-box;
+
+	.fixed {
+		padding: 0;
+	}
+
+	@include desktop_small {
+		padding: 0 20px;
+	}
+
+	@include phone_large {
+		padding: 0 10px;
+	}
+
+}
+
+.svg_hidden {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+}

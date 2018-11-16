@@ -1,0 +1,74 @@
+.checker_box {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: $color_white;
+	padding-left: 1px;
+
+	.checker {
+		flex-grow: 1;
+	}
+
+	label {
+		display: block;
+		padding: 7px 10px;
+		font-size: 12px;
+		font-weight: 700;
+		line-height: 24px;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 1.2px;
+		color: $color_light_gray;
+		vertical-align: middle;
+		border: 1px solid $color_background;
+		cursor: pointer;
+		margin-left: -1px;
+		margin-bottom: -1px;
+		z-index: 1;
+		position: relative;
+	}
+
+	input[type="radio"], input[type="checkbox"] {
+		position: absolute;
+		left: -2000px;
+		visibility: hidden;
+
+		&:checked + label {
+			border-color: $color_green;
+			color: $color_black;
+			z-index: 2;
+		}
+
+	}
+
+	.fields_huge & label {
+		padding-top: 27px;
+		padding-bottom: 27px;
+		font-size: 20px;
+	}
+
+	.fields_large & label {
+		padding-top: 17px;
+		padding-bottom: 17px;
+	}
+
+	@include desktop_small {
+
+		.fields_huge & label {
+			padding-top: 17px;
+			padding-bottom: 17px;
+			font-size: 14px;
+		}
+
+	}
+
+	@include tablet_small {
+
+		.fields_huge & label, .fields_large & label {
+			padding-top: 7px;
+			padding-bottom: 7px;
+			font-size: 12px;
+		}
+
+	}
+
+}

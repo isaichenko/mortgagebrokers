@@ -1,0 +1,153 @@
+.tabs_box {
+	display: block;
+	position: relative;
+	background-color: $color_white;
+	margin-bottom: 40px;
+	text-align: center;
+	padding: 40px 0;
+
+	.header_box + & {
+		margin-top: -36px;
+	}
+
+	.title_box {
+		margin: -8px 0 32px;
+	}
+
+	.wrapper {
+		display: flex;
+	}
+
+	.tabs {
+		display: flex;
+		flex-grow: 1;
+	}
+
+	.tab, .button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		flex-grow: 1;
+		padding: 10px;
+		border: 1px solid $color_light_gray;
+		color: $color_purple;
+		font-size: 12px;
+		font-weight: 700;
+		line-height: 18px;
+		text-transform: uppercase;
+		letter-spacing: 1.2px;
+		margin-right: -1px;
+		z-index: 1;
+		transition: 0.2s;
+		cursor: pointer;
+		box-sizing: border-box;
+		min-height: 60px;
+	}
+
+	.tab {
+		flex-basis: 0;
+
+		&.active, &:hover {
+			z-index: 2;
+			border-color: $color_purple;
+		}
+
+		span {
+			color: $color_main;
+			margin-left: 5px;
+
+			&.new {
+				color: $color_green;
+			}
+
+		}
+
+	}
+
+	.button {
+		margin-left: 40px;
+		margin-right: 0;
+		flex-grow: 0;
+		flex-shrink: 0;
+		border-color: $color_green;
+		color: $color_green;
+		font-size: 14px;
+		width: 270px;
+
+		&:hover {
+			background-color: $color_green;
+			color: $color_white;
+		}
+
+	}
+
+	@include desktop_small {
+		padding: 20px 0;
+		margin-bottom: 20px;
+
+		.title_box {
+			margin: 13px 0 14px;
+		}
+
+		.wrapper {
+			flex-wrap: wrap;
+		}
+
+		.button {
+			order: 1;
+			flex-grow: 1;
+			width: 100%;
+			margin: 0 0 20px;
+		}
+
+		.tabs {
+			order: 2;
+		}
+
+	}
+
+	@include tablet_large {
+
+		.header_box + & {
+			margin-top: -30px;
+		}
+
+		.title_box {
+			margin: 5px 0 16px;
+		}
+
+	}
+
+	@include tablet_small {
+		margin-bottom: 10px;
+
+		.header_box + & {
+			margin-top: -15px;
+		}
+
+		.tabs {
+			flex-wrap: wrap;
+		}
+
+		.tab {
+			width: 50%;
+			flex-basis: auto;
+			margin-top: -1px;
+			min-height: 40px;
+			font-size: 10px;
+		}
+
+		.button {
+			font-size: 12px;
+			min-height: 40px;
+			margin-bottom: 10px;
+		}
+
+	}
+
+	@include phone_large {
+		padding: 10px 0;
+	}
+
+}

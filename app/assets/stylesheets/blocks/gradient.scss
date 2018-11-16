@@ -1,0 +1,72 @@
+.gradient_box {
+	display: block;
+	position: relative;
+	background: linear-gradient(to bottom, $color_black, $color_black 800px, $color_purple 100%);
+	margin-bottom: 80px;
+	color: $color_white;
+
+	.header_box + & {
+		margin-top: -36px;
+	}
+
+	.features_box {
+		margin-bottom: 106px;
+	}
+
+	.description_box {
+		margin: -40px 0 0;
+		bottom: -40px;
+
+		.description {
+			margin-bottom: 146px;
+		}
+
+	}
+
+	@include tablet_large {
+		margin-bottom: 30px;
+
+		.header_box + & {
+			margin-top: -30px;
+		}
+
+		.features_box {
+			margin-bottom: 20px;
+		}
+
+		.description_box {
+			margin: -20px 0 0;
+			bottom: -20px;
+
+			.description {
+				margin-bottom: 30px;
+			}
+
+		}
+
+	}
+
+	@include tablet_small {
+		margin-bottom: 20px;
+
+		.header_box + & {
+			margin-top: -15px;
+		}
+
+		.features_box {
+			margin-bottom: 15px;
+		}
+
+		.description_box {
+			margin: -10px 0 0;
+			bottom: -10px;
+
+			.description {
+				margin-bottom: 15px;
+			}
+
+		}
+
+	}
+
+}

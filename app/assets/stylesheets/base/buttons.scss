@@ -1,0 +1,303 @@
+.btn {
+	display: inline-block;
+	padding: 14px 40px;
+	background-color: $color_green;
+	font-family: $font_main;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 30px;
+	letter-spacing: 1px;
+	color: $color_white;
+	text-transform: uppercase;
+	transition: 0.3s;
+	cursor: pointer;
+	box-sizing: border-box;
+	border: 1px solid transparent;
+	text-align: center;
+
+	&:hover {
+		color: $color_white;
+		background-color: darken($color_green, 20%);
+	}
+
+	&.wide {
+		width: 100%;
+	}
+
+	&.huge {
+		padding: 59px 195px 60px;
+		letter-spacing: 2px;
+
+		.arrow {
+			margin-left: 12px;
+		}
+
+	}
+
+	&.big {
+		font-size: 24px;
+		padding-top: 24px;
+		padding-bottom: 24px;
+		letter-spacing: 2px;
+	}
+
+	&.mini {
+		font-size: 14px;
+		line-height: 18px;
+		padding: 10px 20px;
+	}
+
+	&.micro {
+		font-size: 10px;
+		line-height: 13px;
+		padding: 4px 10px;
+	}
+
+	&.font_micro {
+		letter-spacing: 1.3px;
+		font-size: 14px;
+	}
+
+	&.font_mini {
+		letter-spacing: 1.6px;
+		font-size: 16px;
+	}
+
+	.arrow, &.arrow_down:after, &.arrow_right:after {
+		content: '';
+		display: inline-block;
+		max-width: 24px;
+		max-height: 24px;
+		background: url(../images/ico_btn_down.svg) 0 0 no-repeat;
+		background-size: contain;
+		margin-left: 10px;
+		position: relative;
+		vertical-align: middle;
+		top: -2px;
+		transition: 0.2s;
+		fill: $color_white;
+	}
+
+	.arrow {
+		margin-left: 2px;
+		background: none;
+	}
+
+	.hidden {
+		display: none;
+	}
+
+	&.arrow_down:after {
+		width: 10px;
+		height: 12px;
+	}
+
+	&.arrow_right:after {
+		width: 16px;
+		height: 10px;
+		background-image: url(../images/ico_btn_right.svg);
+	}
+
+	&.transparent {
+		border-color: $color_white;
+		background-color: transparent;
+
+		&:hover {
+			color: $color_black;
+			border-color: transparent;
+			background-color: $color_white;
+
+			.arrow {
+				fill: $color_black;
+			}
+
+		}
+
+	}
+
+	&.transparent_black {
+		color: $color_black;
+		border-color: $color_black;
+		background-color: transparent;
+
+		.arrow {
+			fill: $color_black;
+		}
+
+		&:hover {
+			background-color: $color_white;
+		}
+
+	}
+
+	&.gray {
+		color: $color_gray;
+		background-color: $color_background;
+
+		&:hover {
+			background-color: $color_gray;
+			color: $color_white;
+		}
+
+	}
+
+	&.gray_green {
+		color: $color_green;
+		background-color: $color_background;
+
+		&:hover {
+			background-color: $color_green;
+			color: $color_white;
+		}
+
+	}
+
+	&.gray_black {
+		color: $color_black;
+		background-color: $color_background;
+
+		.arrow {
+			fill: $color_black;
+		}
+
+		&:hover {
+			background-color: $color_black;
+			color: $color_white;
+
+			.arrow {
+				fill: $color_white;
+			}
+
+		}
+
+	}
+
+	&.purple {
+		color: $color_white;
+		background-color: $color_purple;
+
+		&:hover {
+			background-color: darken($color_purple, 20%);
+		}
+
+	}
+
+	&.purple_white {
+		background-color: $color_white;
+		border-color: $color_purple;
+		color: $color_purple;
+
+		&:hover {
+			background-color: $color_purple;
+			color: $color_white;
+		}
+
+	}
+
+	&.orange {
+		background-color: $color_orange;
+		color: $color_white;
+
+		&:hover {
+			border-color: $color_orange;
+			background-color: $color_white;
+			color: $color_orange;
+		}
+
+	}
+
+	&.green_white {
+		border-color: $color_white;
+
+		&:hover {
+			background-color: $color_white;
+			color: $color_green;
+
+			.arrow {
+				fill: $color_green;
+			}
+
+		}
+
+	}
+
+	&.white_green {
+		color: $color_green;
+		background-color: $color_white;
+
+		.arrow {
+			fill: $color_green;
+		}
+
+		&:hover {
+			background-color: $color_green;
+			color: $color_white;
+
+			.arrow {
+				fill: $color_white;
+			}
+
+		}
+
+	}
+
+	&.white_gray {
+		background-color: $color_white;
+		color: $color_gray;
+
+		&:hover {
+			color: $color_white;
+			background-color: $color_gray;
+		}
+
+	}
+
+	&.white_black {
+		background-color: $color_white;
+		border-color: $color_gray;
+		color: $color_black;
+
+		&:hover {
+			background-color: $color_background;
+		}
+
+	}
+
+	&.black {
+		background-color: $color_black;
+		color: $color_white;
+
+		&:hover {
+			background-color: $color_gray;
+		}
+
+	}
+
+	@include desktop_small {
+
+		&.big {
+			font-size: 20px;
+			padding: 14px 20px;
+		}
+
+	}
+
+	@include tablet_small {
+		font-size: 16px;
+		line-height: 18px;
+		padding: 10px 20px;
+
+		&.huge {
+			padding: 30px 40px;
+		}
+
+		&.big {
+			font-size: 16px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			letter-spacing: 1px;
+		}
+
+	}
+
+}

@@ -1,0 +1,146 @@
+.promo_box {
+	display: block;
+	position: relative;
+	margin-bottom: 40px;
+
+	.promo {
+		display: flex;
+		position: relative;
+		align-items: flex-start;
+		flex-direction: column;
+		justify-content: space-between;
+		box-sizing: border-box;
+		padding: 40px;
+		min-height: 480px;
+		color: $color_white;
+		background: url(../images/bg_promo.jpg) 50% 50% no-repeat;
+		background-size: cover;
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			top: 0;
+			z-index: 1;
+			background-image: linear-gradient(to right, $color_black 0%, transparent 50%);
+		}
+
+	}
+
+	.title {
+		display: block;
+		text-align: left;
+		max-width: 480px;
+		margin: 62px 0 20px;
+		font-size: 60px;
+		font-weight: bold;
+		line-height: 72px;
+		position: relative;
+		z-index: 2;
+	}
+
+	.label {
+		display: block;
+		position: absolute;
+		top: 20px;
+		left: -20px;
+		background-color: $color_red;
+		padding: 10px 20px;
+		color: $color_white;
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 20px;
+		text-transform: uppercase;
+		letter-spacing: 1.2px;
+		z-index: 3;
+
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 100%;
+			width: 0;
+			border-right: 20px solid rgba($color_black, 0.3);
+			border-bottom: 20px solid transparent;
+		}
+
+	}
+
+	.btn {
+		z-index: 2;
+
+		.arrow {
+			margin-left: 20px;
+		}
+
+	}
+
+	@include desktop_small {
+
+		.promo {
+			min-height: 304px;
+			padding: 20px;
+		}
+
+		.title {
+			font-size: 40px;
+			line-height: 48px;
+			max-width: 310px;
+			margin: 36px 0 10px;
+		}
+
+		.label {
+			font-size: 10px;
+			line-height: 12px;
+			padding: 4px 10px;
+			left: -10px;
+			top: 10px;
+			letter-spacing: 1px;
+
+			&:after {
+				border-right-width: 10px;
+				border-bottom-width: 10px;
+			}
+
+		}
+
+	}
+
+	@include tablet_small {
+		margin-bottom: 20px;
+
+		.promo {
+			min-height: 172px;
+			padding: 10px;
+		}
+
+		.label {
+			position: relative;
+			left: auto;
+			top: auto;
+		}
+
+		.title {
+			font-size: 20px;
+			font-weight: 700;
+			line-height: 24px;
+			max-width: 160px;
+			margin: 30px 0;
+		}
+
+		.btn {
+			display: none;
+
+			.arrow {
+				margin-left: 10px;
+			}
+
+		}
+
+	}
+
+}

@@ -1,0 +1,173 @@
+.form_box {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	margin: 0 -20px 4px;
+	color: $color_black;
+
+	&.gray {
+		color: $color_gray;
+	}
+
+	.item {
+		display: block;
+		position: relative;
+		padding: 0 20px;
+		margin-bottom: 36px;
+		width: 50%;
+		box-sizing: border-box;
+		z-index: 1;
+
+		&:hover {
+			z-index: 3;
+		}
+
+		& > label {
+			display: block;
+			position: relative;
+			font-size: 14px;
+			font-weight: 500;
+			margin-bottom: 6px;
+		}
+
+		& > .linked {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.link {
+			display: inline-block;
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+
+		}
+
+	}
+
+	.wide {
+		width: 100%;
+	}
+
+	.half {
+		width: 25%;
+	}
+
+	.field {
+		display: block;
+		position: relative;
+	}
+
+	.info {
+		display: block;
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		font-size: 10px;
+		font-weight: 700;
+		line-height: 14px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		z-index: 2;
+		margin-top: -7px;
+
+		&.green {
+			color: $color_green;
+		}
+
+		&.orange {
+			color: $color_orange;
+		}
+
+	}
+
+	.submit {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		width: 100%;
+		margin-top: 5px;
+		justify-content: space-between;
+
+		.checkbox {
+			align-self: flex-start;
+		}
+
+		.btn {
+			min-width: 175px;
+		}
+
+		.white_gray {
+			min-width: auto;
+		}
+
+	}
+
+	textarea {
+		height: 200px;
+	}
+
+	@include desktop_small {
+		margin: 0 -10px;
+
+		.item {
+			padding: 0 10px;
+			margin-bottom: 26px;
+		}
+
+		.half {
+			width: 50%;
+		}
+
+		.submit {
+			margin-top: -6px;
+		}
+
+	}
+
+	@include tablet_small {
+
+		textarea {
+			height: 100px;
+		}
+
+	}
+
+	@include phone_large {
+		margin: 0 0 -15px;
+
+		.item {
+			display: block;
+			padding: 0;
+			width: 100%;
+		}
+
+		.submit {
+			align-items: flex-start;
+
+			.checkbox {
+				display: block;
+				width: 100%;
+				margin-bottom: 22px;
+			}
+
+			.buttons {
+				text-align: right;
+			}
+
+		}
+
+	}
+
+	@include phone_small {
+
+		.submit {
+			margin-top: -4px;
+		}
+
+	}
+
+}

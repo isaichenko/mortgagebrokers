@@ -1,0 +1,208 @@
+.request_box {
+	display: block;
+	position: relative;
+	margin-bottom: 40px;
+	padding: 40px;
+	background-color: $color_background;
+
+	.title_box {
+		text-align: center;
+		margin-bottom: 34px;
+
+		.icon {
+			display: block;
+			margin: 5px auto 12px;
+			width: 32px;
+			height: 32px;
+			fill: $color_purple;
+		}
+
+		&.green {
+
+			.icon {
+				fill: $color_green;
+			}
+
+		}
+
+		&.gray {
+			color: $color_gray;
+
+			.icon {
+				fill: $color_gray;
+			}
+
+		}
+
+	}
+
+	.title_icon {
+		padding-top: 49px;
+		text-align: center;
+		color: $color_green;
+
+		span {
+			color: $color_black;
+		}
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 2px;
+			left: 50%;
+			margin-left: -17px;
+			width: 30px;
+			height: 30px;
+			background: url(../images/ico_complete.svg) 50% 50% no-repeat;
+			background-size: contain;
+		}
+
+	}
+
+	.title_empty {
+		margin-top: -12px;
+		top: 4px;
+	}
+
+	.notification_desktop {
+		padding-bottom: 39px;
+	}
+
+	.request_buttons {
+		display: flex;
+		flex-wrap: nowrap;
+		margin: 40px -40px -40px;
+
+		.btn {
+			flex-grow: 1;
+			flex-basis: 0;
+			border: none;
+			border-left: 1px solid $color_white;
+			border-top: 1px solid $color_white;
+			padding: 22px 5px 21px;
+			font-size: 14px;
+			line-height: 20px;
+			letter-spacing: 1.3px;
+
+			&:first-child {
+				border-left: none;
+			}
+
+		}
+
+		.green, .gray_green {
+			font-size: 20px;
+			letter-spacing: 1px;
+		}
+
+	}
+
+	.bids_box {
+
+		.bid:last-child {
+			margin-bottom: 0;
+		}
+
+	}
+
+	@include desktop_small {
+		padding: 20px;
+		margin-bottom: 20px;
+
+		.title_box {
+			font-size: 20px;
+			margin-bottom: 15px;
+		}
+
+		.title_icon {
+			left: 5px;
+
+			span {
+				display: block;
+			}
+
+			&:before {
+				margin-left: -16px;
+			}
+
+		}
+
+		.title_empty {
+			top: 0;
+			margin-top: 0;
+		}
+
+		.notification_box {
+			margin-bottom: 18px;
+
+			&.small {
+				padding-bottom: 27px;
+			}
+
+		}
+
+		.request_buttons {
+			margin: 20px -20px -20px;
+
+			.green, .gray_green {
+				font-size: 16px;
+			}
+
+		}
+
+	}
+	@include tablet_small {
+		margin: 0 -20px 20px;
+
+		.title_box {
+			font-size: 16px;
+		}
+
+		.title_icon {
+			left: 0;
+
+			&:before {
+				top: 5px;
+				margin-left: -14px;
+			}
+
+		}
+
+		.notification_box {
+			margin-bottom: 10px;
+
+			&.small {
+				padding-bottom: 16px;
+			}
+
+		}
+
+		.request_buttons {
+
+			.btn {
+				font-size: 12px;
+				padding: 10px 5px;
+				letter-spacing: 0.6px;
+			}
+
+			.green, .gray_green {
+				font-size: 14px;
+			}
+
+		}
+
+	}
+
+	@include phone_large {
+		padding: 10px;
+		margin: 0 -10px 10px;
+
+		.request_buttons {
+			margin-top: 10px;
+			margin-bottom: -10px;
+		}
+
+	}
+
+}

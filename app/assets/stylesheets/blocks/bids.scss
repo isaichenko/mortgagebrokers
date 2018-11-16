@@ -1,0 +1,371 @@
+.bids_box {
+	display: block;
+	position: relative;
+
+	.bid {
+		display: block;
+		margin-bottom: 38px;
+		background-color: $color_white;
+	}
+
+	.heading {
+		display: flex;
+		border-bottom: 1px solid $color_background;
+
+		.btn {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-grow: 0;
+			font-size: 16px;
+			line-height: 18px;
+			text-transform: uppercase;
+			padding: 32px 20px 29px;
+			max-width: 170px;
+			border-left: 1px solid $color_background;
+			letter-spacing: 1.5px;
+		}
+
+		.btn.white_gray {
+			font-weight: 500;
+			max-width: 150px;
+		}
+
+	}
+
+	.user {
+		display: flex;
+		align-items: center;
+		padding: 20px;
+		flex-grow: 1;
+	}
+
+	.thumb {
+		display: block;
+		margin-right: 10px;
+		border: 2px solid $color_white;
+		filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+		border-radius: 50%;
+		flex-grow: 0;
+		flex-shrink: 0;
+
+		img {
+			display: block;
+			width: 56px;
+			height: auto;
+			border-radius: 50%;
+		}
+
+	}
+
+	.details {
+		display: block;
+		color: $color_gray;
+		font-size: 10px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	.name {
+		display: block;
+		color: $color_purple;
+		font-size: 20px;
+		line-height: 1.25;
+		font-weight: 700;
+		text-transform: none;
+		margin-bottom: 3px;
+		letter-spacing: 0;
+	}
+
+	.secure {
+		display: inline-block;
+		width: 15px;
+		height: 16px;
+		background: url(../images/ico_shield.svg) 0 0 no-repeat;
+		background-size: contain;
+		vertical-align: middle;
+		position: relative;
+		margin-left: 1px;
+		top: -1px;
+	}
+
+	.reviews {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		flex-grow: 0;
+		border-left: 1px solid $color_background;
+		padding: 20px 30px;
+		text-align: center;
+		color: $color_gray;
+		font-size: 10px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		white-space: nowrap;
+
+		&.reviews_empty {
+
+			.rating:before {
+				background-image: url(../images/ico_star.svg);
+			}
+
+		}
+
+	}
+
+	.rating {
+		display: block;
+		position: relative;
+		padding-left: 26px;
+		color: $color_black;
+		font-size: 20px;
+		font-weight: 300;
+		line-height: 1;
+		text-transform: uppercase;
+		margin-bottom: 6px;
+		top: 1px;
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 1px;
+			width: 17px;
+			height: 17px;
+			background: url(../images/ico_star_active.svg) 0 0 no-repeat;
+			background-size: contain;
+		}
+
+	}
+
+	.items {
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		padding: 18px 0 0;
+		margin: 0 -20px;
+	}
+
+	.items_quad {
+		margin: 0 20px;
+
+		.item {
+			width: 25%;
+			padding: 0;
+			margin-bottom: 32px;
+		}
+
+		.item_full {
+			width: 100%;
+			margin-bottom: 14px;
+		}
+
+	}
+
+	.item {
+		display: block;
+		padding: 0 40px;
+		width: 20%;
+		margin-bottom: 22px;
+		box-sizing: border-box;
+	}
+
+	.item_full {
+		width: 100%;
+		max-width: none;
+		margin-bottom: 14px;
+	}
+
+	.label {
+		display: block;
+		color: $color_gray;
+		font-size: 10px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin-bottom: 3px;
+	}
+
+	.text {
+		display: block;
+		color: $color_black;
+		font-size: 20px;
+		font-weight: 300;
+		line-height: 1.2;
+		letter-spacing: 0.1px;
+	}
+
+	.buttons {
+		display: none;
+		flex-wrap: nowrap;
+
+		.btn {
+			border: none;
+			font-size: 14px;
+			line-height: 20px;
+			letter-spacing: 1.3px;
+			border-top: 1px solid $color_background;
+			border-left: 1px solid $color_background;
+			padding: 20px 5px;
+			flex-grow: 1;
+
+			&:first-child {
+				border-left: none;
+			}
+
+		}
+
+	}
+
+	@include desktop_small {
+
+		.bid {
+			margin-bottom: 20px;
+		}
+
+		.heading {
+
+			.btn {
+				display: none;
+			}
+
+		}
+
+		.details > span {
+			display: block;
+			height: 0;
+			overflow: hidden;
+		}
+
+		.name {
+			font-size: 16px;
+		}
+
+		.rating {
+			font-size: 16px;
+			padding-left: 22px;
+			position: relative;
+			top: 2px;
+
+			&:before {
+				top: -3px;
+				left: -2px;
+			}
+
+		}
+
+		.items {
+			padding-left: 20px;
+			padding-right: 20px;
+			margin: 0 -5px;
+		}
+
+		.items_quad {
+			margin: 0 -5px;
+
+			.item {
+				width: 33.33%;
+				padding: 0 5px;
+				margin-bottom: 23px;
+			}
+
+			.item_full {
+				width: 100%;
+				margin-bottom: 20px;
+			}
+
+		}
+
+		.item {
+			padding: 0 5px;
+			width: 33.33%;
+			margin-bottom: 23px;
+		}
+
+		.item_full {
+			width: 100%;
+			margin-bottom: 15px;
+		}
+
+		.text {
+			font-size: 16px;
+			letter-spacing: 0;
+		}
+
+		.buttons {
+			display: flex;
+		}
+
+	}
+
+	@include tablet_small {
+
+		.user {
+			padding: 10px;
+		}
+
+		.secure {
+			top: -3px;
+			margin-left: 0;
+		}
+
+		.reviews {
+			padding: 10px 8px;
+			border-left: none;
+			align-self: flex-end;
+
+			& > span {
+				display: none;
+			}
+
+		}
+
+		.rating {
+			top: auto;
+			padding-left: 26px;
+		}
+
+		.items_quad {
+
+			.item {
+				width: 50%;
+				margin-bottom: 25px;
+			}
+
+			.item_full {
+				width: 100%;
+				margin-bottom: 22px;
+			}
+
+		}
+
+		.item {
+			margin-bottom: 25px;
+		}
+
+		.item_full {
+			margin-bottom: 22px;
+		}
+
+		.text {
+			font-size: 14px;
+			line-height: 1.25;
+		}
+
+		.buttons {
+
+			.btn {
+				font-size: 12px;
+				padding: 10px 5px;
+			}
+
+		}
+
+	}
+
+}

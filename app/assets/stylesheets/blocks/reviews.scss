@@ -1,0 +1,180 @@
+.reviews_box {
+	display: block;
+	position: relative;
+	margin-bottom: 0;
+
+	.review, .write {
+		display: block;
+		position: relative;
+		margin-bottom: 40px;
+		padding-bottom: 35px;
+		border-bottom: 1px solid $color_light_gray;
+		color: $color_main;
+	}
+
+	.write {
+		display: block;
+		text-align: center;
+		margin-top: -1px;
+		padding-bottom: 40px;
+		padding-left: 96px;
+
+		svg {
+			display: block;
+			width: 64px;
+			height: 64px;
+			fill: $color_orange;
+			margin: 0 auto 15px;
+		}
+
+		.label {
+			display: block;
+			color: $color_main;
+			font-size: 20px;
+			font-weight: 700;
+			margin-bottom: 24px;
+
+			&:last-child {
+				margin-bottom: 14px;
+			}
+
+		}
+
+		.btn {
+			min-width: 170px;
+			letter-spacing: 1.4px;
+		}
+
+	}
+
+	.author {
+		display: flex;
+		align-items: center;
+		margin-bottom: 3px;
+		margin-top: -1px;
+	}
+
+	.photo {
+		display: block;
+		position: relative;
+		overflow: hidden;
+		width: 38px;
+		border-radius: 50%;
+		border: 2px solid $color_white;
+		filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+		margin-right: 7px;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			border-radius: 50%;
+		}
+
+	}
+
+	.name {
+		display: block;
+		color: $color_purple;
+		font-size: 14px;
+		font-weight: 500;
+		margin-bottom: 3px;
+	}
+
+	.date {
+		display: block;
+		color: $color_gray;
+		font-size: 10px;
+		font-weight: 400;
+	}
+
+	.title {
+		display: block;
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 1.25;
+		margin-bottom: 7px;
+	}
+
+	.rating {
+		display: flex;
+		align-items: center;
+		margin-bottom: 14px;
+	}
+
+	.star {
+		display: inline-block;
+		width: 17px;
+		height: 17px;
+		background: url(../images/ico_star.svg) 0 0 no-repeat;
+		background-size: contain;
+		margin-right: 2px;
+
+		&.active {
+			background-image: url(../images/ico_star_active.svg);
+		}
+
+	}
+
+	.text {
+		display: block;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 1.25;
+	}
+
+	@include desktop_small {
+
+		.review {
+			padding-bottom: 16px;
+			margin-bottom: 20px;
+		}
+
+		.write {
+			padding-left: 0;
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+
+			.label {
+				font-size: 16px;
+				margin-bottom: 15px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+			}
+
+		}
+
+		.author {
+			margin-bottom: 5px;
+		}
+
+		.title {
+			font-size: 16px;
+		}
+
+		.rating {
+			margin-bottom: 6px;
+		}
+
+	}
+
+	@include tablet_small {
+
+		.title {
+			font-size: 14px;
+		}
+
+		.text {
+			font-size: 12px;
+		}
+
+		.rating {
+			margin-bottom: 8px;
+		}
+
+	}
+
+}

@@ -1,0 +1,59 @@
+<div class="modal_box modal_form" id="modal_login">
+
+	<form action="#" class="modal">
+
+		<div class="close"></div>
+
+		<div class="logo_wrapper">
+
+			<a class="logo" href="index.html">
+				<svg xmlns="http://www.w3.org/2000/svg">
+					<use xlink:href="#ico_logo"></use>
+				</svg>
+			</a>
+
+		</div>
+
+		<div class="title_box black">Please, login to continue...</div>
+
+		<% if devise_mapping.registerable? && controller_name != 'registrations' %>
+		  <div class="text">
+		  	Don’t have an account? <span data-modal="sign_up">Sign Up</span>
+	  	</div>
+		<% end %>
+
+		<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form' }) do |f| %>
+			
+			<div class="items fields_large fields_uppercased">
+
+				<div class="item_wide">
+
+					<div class="field">
+        		<%= f.email_field :email, autofocus: true, placeholder: "Email" %>
+					</div>
+
+				</div>
+
+				<div class="item_wide">
+
+					<div class="field">
+        		<%= f.password_field :password, autocomplete: 'off', placeholder: "Password" %>
+
+        		<div class="link link_forgot">
+	        		<% if devise_mapping.recoverable? && controller_name != 'passwords' %>
+							  <%= link_to "Forgot?", new_password_path(resource_name) %>
+							<% end %>
+						</div>
+					</div>
+
+				</div>
+
+     	</div>
+
+      <%= f.submit 'Continue', class: 'btn font_mini wide' %>
+      
+    <% end %>
+
+	</form>
+
+</div>

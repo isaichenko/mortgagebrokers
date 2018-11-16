@@ -1,0 +1,546 @@
+.modal_box {
+	display: flex;
+	visibility: hidden;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: rgba(#000000, 0.8);
+	transition: 0.5s;
+	padding: 20px;
+	opacity: 0;
+	z-index: 10;
+
+	&.is_visible {
+		visibility: visible;
+		opacity: 1;
+
+		.modal {
+			top: 0;
+		}
+
+	}
+
+	.modal {
+		display: block;
+		position: relative;
+		top: -600px;
+		overflow: hidden;
+		width: 100%;
+		max-width: 500px;
+		margin: auto;
+		padding: 40px;
+		background-color: $color_white;
+		color: $color_main;
+		text-align: center;
+		transition: 0.5s;
+	}
+
+	.close {
+		display: block;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		background: none;
+		border: none;
+		outline: none;
+		width: 17px;
+		height: 17px;
+		cursor: pointer;
+
+		&:after, &:before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			right: 0;
+			transform: translateY(-50%) rotate(45deg);
+			display: block;
+			width: 100%;
+			height: 1px;
+			background-color: $color_black;
+			transition: 0.2s;
+		}
+
+		&:before {
+			transform: translateY(-50%) rotate(-45deg);
+		}
+
+		&:hover {
+
+			&:before, &:after {
+				background-color: $color_green;
+			}
+
+		}
+
+	}
+
+	@include desktop_small {
+
+		.modal {
+			padding: 20px;
+		}
+
+	}
+
+	@include phone_small {
+		padding: 10px;
+
+		.modal {
+			padding: 10px;
+		}
+
+	}
+
+}
+
+.modal_message {
+
+	.modal {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+
+	.icon {
+		display: inline-block;
+		width: 69px;
+		height: 72px;
+		margin-bottom: 30px;
+		background: url(../images/ico_complete.svg) 0 0 no-repeat;
+		background-size: contain;
+		position: relative;
+	}
+
+	.icon_complete {
+		background-image: url(../images/ico_complete.svg);
+	}
+
+	.title_box {
+		margin-bottom: 33px;
+	}
+
+	@include desktop_small {
+
+		.modal {
+			padding: 30px 20px;
+		}
+
+		.icon {
+			margin-bottom: 20px;
+		}
+
+		.title_box {
+			margin-bottom: 24px;
+		}
+
+	}
+
+	@include tablet_small {
+
+		.icon {
+			margin-bottom: 15px;
+		}
+
+		.title_box {
+			margin-bottom: 20px;
+		}
+
+	}
+
+}
+
+.modal_form {
+	text-align: center;
+
+	.logo_wrapper {
+		display: block;
+		margin-top: 2px;
+		margin-bottom: 25px;
+	}
+
+	.logo {
+		display: inline-block;
+		cursor: pointer;
+
+		svg {
+			display: block;
+			width: 68px;
+			height: 41px;
+			fill: $color_green;
+			transition: 0.2s;
+		}
+
+		&:hover {
+
+			svg {
+				fill: $color_gray;
+			}
+
+		}
+
+	}
+
+	.title_box {
+		margin-bottom: 30px;
+
+		&.icon_lock {
+			margin-top: -12px;
+			padding-top: 60px;
+
+			&:before {
+				content: '';
+				display: block;
+				width: 32px;
+				height: 32px;
+				top: 4px;
+				position: absolute;
+				left: 50%;
+				margin-left: -16px;
+				background: url(../images/ico_password.svg) 0 0 no-repeat;
+				background-size: contain;
+			}
+
+		}
+
+	}
+
+	.text {
+		display: block;
+		font-size: 14px;
+		margin-top: -20px;
+		margin-bottom: 36px;
+		color: $color_gray;
+
+		span, a {
+			color: $color_green;
+			cursor: pointer;
+			transition: 0.2s;
+
+			&:hover {
+				text-decoration: underline;
+			}
+
+		}
+
+	}
+
+	.items {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		position: relative;
+		margin: 0 -10px;
+	}
+
+	.item, .item_wide {
+		display: block;
+		position: relative;
+		box-sizing: border-box;
+		margin-bottom: 26px;
+		padding: 0 10px;
+		width: 50%;
+	}
+
+	.item_wide {
+		width: 100%;
+	}
+
+	.fields_large {
+
+		.item, .item_wide {
+			margin-bottom: 20px;
+		}
+
+	}
+
+	.buttons {
+		margin-top: 2px;
+	}
+
+	label {
+		display: block;
+		color: $color_gray;
+		font-size: 14px;
+		font-weight: 500;
+		margin-bottom: 6px;
+	}
+
+	.link {
+		display: block;
+		position: absolute;
+		right: 30px;
+		top: 50%;
+		font-size: 14px;
+		line-height: 20px;
+		margin-top: -10px;
+		text-align: right;
+		text-decoration: underline;
+		cursor: pointer;
+		transition: 0.2s;
+		color: $color_gray;
+		z-index: 5;
+
+		&:hover {
+			text-decoration: none;
+			color: $color_green;
+		}
+
+	}
+
+	.terms {
+		display: block;
+		font-size: 12px;
+		font-weight: 500;
+		color: $color_main;
+		max-width: 340px;
+		margin: -2px auto 0;
+
+		a {
+			text-decoration: underline;
+			color: $color_main;
+
+			&:hover {
+				text-decoration: none;
+				color: $color_green;
+			}
+
+		}
+
+	}
+
+	.jq-selectbox__select-text {
+		color: $color_purple;
+	}
+
+	@include desktop_small {
+
+		.logo_wrapper {
+			margin-bottom: 10px;
+		}
+
+		.title_box {
+			margin-bottom: 20px;
+
+			&.icon_lock {
+				padding-top: 50px;
+				margin: 10px 0 16px;
+			}
+
+		}
+
+		.text {
+			margin: -10px 0 20px;
+		}
+
+		.link {
+			right: 22px;
+		}
+
+	}
+
+	@include phone_small {
+
+		.logo_wrapper {
+			margin-top: 20px;
+		}
+
+		.text {
+			margin-bottom: 20px;
+		}
+
+		.items {
+			margin: 0 -5px;
+		}
+
+		.item, .item_wide {
+			padding: 0 5px;
+			margin-bottom: 10px;
+		}
+
+		.fields_large {
+
+			.item, .item_wide {
+				margin-bottom: 10px;
+			}
+
+		}
+
+		.link {
+			right: 12px;
+		}
+
+	}
+
+	@include phone_large {
+
+		.item {
+			width: 100%;
+		}
+
+	}
+
+}
+
+.modal_review {
+
+	.heading {
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		background-color: #fef2dd;
+		line-height: 14px;
+		color: $color_orange;
+		font-size: 10px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		padding: 15px 20px 11px;
+		border-bottom: 1px solid #d7cebf;
+
+		&:before {
+			content: '';
+			display: block;
+			width: 17px;
+			height: 17px;
+			background: url(../images/ico_star_empty.svg) 0 0 no-repeat;
+			background-size: contain;
+			position: absolute;
+			left: 10px;
+			top: 50%;
+			margin-top: -8px;
+		}
+
+	}
+
+	.close {
+		top: 50%;
+		margin-top: -8px;
+	}
+
+	.photo {
+		display: block;
+		border: 2px solid #ffffff;
+		filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+		border-radius: 50%;
+		margin: 38px auto 13px;
+		width: 80px;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			border-radius: 50%;
+		}
+
+	}
+
+	.name {
+		display: block;
+		color: $color_purple;
+		font-size: 20px;
+		font-weight: 500;
+		margin-bottom: 33px;
+	}
+
+	.secure {
+		display: inline-block;
+		width: 15px;
+		height: 16px;
+		background: url(../images/ico_shield.svg) 0 0 no-repeat;
+		background-size: contain;
+		vertical-align: middle;
+		position: relative;
+		margin-left: 3px;
+	}
+
+	.stars {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 58px;
+		cursor: default;
+	}
+
+	.star {
+		display: inline-block;
+		width: 49px;
+		height: 49px;
+		background: url(../images/ico_star_empty.svg) 50% 50% no-repeat;
+		background-size: contain;
+		cursor: pointer;
+		padding: 0 5px;
+
+		&.active {
+			background-image: url(../images/ico_star_active.svg);
+		}
+
+	}
+
+	label {
+		display: block;
+		color: $color_gray;
+		font-size: 14px;
+		font-weight: 500;
+		margin-bottom: 6px;
+		text-align: center;
+	}
+
+	.items {
+		display: block;
+		position: relative;
+	}
+
+	.item {
+		margin-bottom: 17px;
+		text-align: left;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+	}
+
+	.counter {
+		display: block;
+		color: $color_light_gray;
+		text-align: center;
+		font-size: 10px;
+		font-weight: 600;
+		margin-top: 6px;
+	}
+
+	textarea {
+		height: 124px;
+	}
+
+	.btn {
+		font-size: 14px;
+		width: 100%;
+	}
+
+	@include desktop_small {
+
+		.name {
+			margin-bottom: 18px;
+		}
+
+		.stars {
+			margin-bottom: 25px;
+		}
+
+		.star {
+			width: 32px;
+			height: 32px;
+		}
+
+	}
+
+}

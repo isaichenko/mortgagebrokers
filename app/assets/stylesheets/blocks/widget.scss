@@ -1,0 +1,8 @@
+.widget_box {
+	margin-bottom: 40px;
+
+	@include desktop_small {
+		margin-bottom: 20px;
+	}
+
+}

@@ -10,13 +10,20 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery3
-//= require popper
+// require jquery3
+// require popper
+//= require theme/jquery-3.3.1.min
+//= require theme/jquery.formstyler.min
+//= require theme/flickity.pkgd.min
+//= require theme/scripts
 //= require rails-ujs
 //= require activestorage
 //= require chosen-jquery
-//= require turbolinks
-//= require bootstrap-sprockets
+
+//= require theme/nouislider.min
+
+// require turbolinks
+// require bootstrap-sprockets
 //= require_tree .
 $(document).on('turbolinks:load', function() {
   if(localStorage.getItem("role_type")){
